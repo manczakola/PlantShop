@@ -17,10 +17,13 @@ body {
 .navbar-expand-lg {
   border-bottom: 1px solid #cfcece;
   background-color: #fff;
-  margin-top: 3vw;
 }
 
 .nav-link {
+  color: #646262;
+}
+
+.nav-link:hover {
   color: #646262;
 }
 
