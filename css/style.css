@@ -33,7 +33,7 @@ body {
 
 @media (max-width: 500px) {
   .navbar-expand-lg .nav-link {
-    font-size: 87%;
+    font-size: 60%;
     padding: 0;
     margin: .5em .3em;
   }
