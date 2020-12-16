@@ -40,7 +40,7 @@ body {
         }
 
         @media (max-width:500px) {
-            font-size: 60%;
+            font-size: 70%;
             padding: 0;
             margin: .5em .3em;
         }
@@ -93,9 +93,10 @@ body {
 
 .big-image img {
     width: 100%;
-    height: auto;
+    height:350px;
     object-fit: cover;
     padding: .5em;
+    margin-bottom: 2em;
 }
 
 .small-images {
@@ -113,9 +114,16 @@ body {
     padding: .5em;
 }
 
+.clearfix img {
+    width: 40px;
+    height: auto;
+}
+
 
 // Product-description
-
+.product{
+    min-height: 80vh;
+}
 .product-description {
     padding: 4em 1em;
     color: $black;
@@ -131,6 +139,7 @@ body {
         color: $text;
         border-top: 1px solid $lightergray;
     }
+    
 }
 
 
@@ -146,4 +155,23 @@ body {
 .price {
     color: $text;
     font-size: .8em;
+}
+
+
+//Shopping cart
+.dropdown-menu {
+    left: -10em !important;
+    min-width: 18rem !important;
+   
+}
+.clearfix{
+    margin: 0.5em 0;
+}
+.number{
+    font-weight: 700;
+  
+}
+
+.badge{
+    color:$button !important;
 }
