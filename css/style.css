@@ -33,7 +33,15 @@ body {
 
 @media (max-width: 500px) {
   .navbar-expand-lg .nav-link {
-    font-size: 70%;
+    font-size: .9em;
+    padding: 0;
+    margin: .5em .3em;
+  }
+}
+
+@media (max-width: 365px) {
+  .navbar-expand-lg .nav-link {
+    font-size: .8em;
     padding: 0;
     margin: .5em .3em;
   }
@@ -107,8 +115,14 @@ body {
 }
 
 .clearfix img {
-  width: 40px;
-  height: auto;
+  width: 8vw;
+  max-width: 40px;
+  height: 6vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  margin: 0 1em;
 }
 
 .product {
@@ -143,11 +157,15 @@ body {
 
 .dropdown-menu {
   left: -10em !important;
-  min-width: 18rem !important;
+  min-width: 300px !important;
+}
+
+.shopping-cart-items {
+  margin-left: -1em !important;
 }
 
 .clearfix {
-  margin: 0.5em 0;
+  margin: 0.7em 0;
 }
 
 .number {
@@ -156,5 +174,14 @@ body {
 
 .badge {
   color: #3e3e3f !important;
+}
+
+.cancelItem {
+  margin-left: 1em;
+}
+
+.cancelItem:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 /*# sourceMappingURL=style.css.map */

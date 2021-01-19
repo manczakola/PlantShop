@@ -2,6 +2,7 @@
 const btnShopping = document.querySelectorAll(".btn-outline-secondary");
 const shoppingCartItems = document.querySelector(".shopping-cart-items");
 const shoppingCartDropdown = document.querySelector(".shopping-cart");
+const dropdownMenu = document.querySelector(".dropdown-menu");
 const totalMoney = document.querySelector(".lighter-text");
 const badge = document.querySelector(".badge");
 const shoppingCartBtn = document.querySelector("#dropdownMenuButton");
@@ -31,7 +32,10 @@ btnShopping.forEach((btn) =>
             <span class='cancelItem btn btn-outline'>X</span>
           </li>
           `;
-
+        window.scrollTo(0, 0);
+        document.querySelector('.navbar-toggler').classList.remove('collapsed');
+        document.querySelector("#navbarToggler").classList.add('show');
+        shoppingCartBtn.classList.add('show');
         shoppingCartBtn.parentNode.children[0].children[0].innerText++; // change number of cart items
 
         // remove items on x btn
@@ -41,8 +45,8 @@ btnShopping.forEach((btn) =>
         cancelItem.forEach(btn => btn.addEventListener('click', (e) => {
 
             let cancelValue = parseFloat(e.target.parentNode.children[2].innerText); // value in $ of cancel item
-            e.target.parentNode.remove();   // remove li item
-            document.querySelector(".dropdown-menu").classList.add('show'); // dont hide ul list of shopping cart when remove items
+            e.target.parentNode.remove(); // remove li item
+            dropdownMenu.classList.add('show'); // dont hide ul list of shopping cart when remove items
             shoppingCartBtn.parentNode.children[0].children[0].innerText--; // change number of cart items
             money.pop(cancelValue); // remove $$ from money array
 
@@ -55,14 +59,14 @@ btnShopping.forEach((btn) =>
             if (money.length == 0) {
                 totalMoney.innerText = `Total:0$`;
                 badge.innerText = `0`;
-                document.querySelector(".dropdown-menu").classList.remove('show'); // when nothing is in the shopping cart, hide ul list
+                dropdownMenu.classList.remove('show'); // when nothing is in the shopping cart, hide ul list
             } else {
                 totalMoney.innerText = `Total: ${total}$`;
                 badge.innerText = `${money.length}`;
             }
         }));
 
-        document.querySelector(".dropdown-menu").classList.add('show'); // show ul list of shopping cart when remove the items
+        dropdownMenu.classList.add('show'); // show ul list of shopping cart when remove the items
 
         // total money counting when add items to shopping cart
 
@@ -89,7 +93,7 @@ smallImages.forEach(img => img.addEventListener('click', (e) => {
     const srcOfClickImage = img.children[0].src;
 
     bigImage.src = srcOfClickImage;
-})); 
+}));
 
 // document.querySelector('.navbar-toggler').addEventListener("touchstart", () => { document.querySelector('.navbar-toggler').classList.toggle('collapsed')
 // })
