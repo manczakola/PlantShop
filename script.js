@@ -118,7 +118,7 @@ const changeImage = (e) => {
     let i = 0;
     smallImages.forEach(img => {
         i++;
-        img.children[0].src = `images/succulent${i}.jpg`;
+        img.children[0].src = `images/${(mainProduct.name).toLowerCase()}${i}.jpg`;
     });
     productName.textContent = mainProduct.name;
     productPrice.textContent = mainProduct.price;
@@ -138,7 +138,7 @@ const changeImageOfTouch = (e) => {
     let i = 0;
     smallImages.forEach(img => {
         i++;
-        img.children[0].src = `images/succulent${i}.jpg`;
+        img.children[0].src = `images/${(mainProduct.name).toLowerCase()}${i}.jpg`;
     });
     productName.textContent = mainProduct.name;
     productPrice.textContent = mainProduct.price;
