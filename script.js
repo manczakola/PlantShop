@@ -114,7 +114,7 @@ const changeImage = (e) => {
     mainProduct.price = e.target.parentNode.children[2].innerText;
 
     console.log(mainProduct);
-    bigImage.src = `images/${mainProduct.name}1.jpg`;
+    bigImage.src = `images/${(mainProduct.name).toLowerCase()}1.jpg`;
     let i = 0;
     smallImages.forEach(img => {
         i++;
@@ -134,7 +134,7 @@ const changeImageOfTouch = (e) => {
     mainProduct.price = e.touches[0].target.parentNode.children[2].innerText;
 
     console.log(mainProduct);
-    bigImage.src = `images/${mainProduct.name}1.jpg`;
+    bigImage.src = `images/${(mainProduct.name).toLowerCase()}1.jpg`;
     let i = 0;
     smallImages.forEach(img => {
         i++;
