@@ -18,13 +18,16 @@ const smallImages = document.querySelectorAll('.image-item');
 
 const succulentBox = document.querySelectorAll('#succulent');
 const succulentImage = document.querySelectorAll('#succulent')[0].children[0];
+const succulentTitle = document.querySelectorAll('#succulent')[0].children[1];
 
 const cactusBox = document.querySelectorAll('#cactus');
 const cactusImage = document.querySelectorAll('#cactus')[0].children[0];
+const cactusTitle = document.querySelectorAll('#cactus')[0].children[1];
 
 
 const terraniumBox = document.querySelectorAll('#terranium');
 const terraniumImage = document.querySelectorAll('#terranium')[0].children[0];
+const terraniumTitle = document.querySelectorAll('#terranium')[0].children[1];
 
 const productFooterItems = document.querySelectorAll('.product-footer-item')
 
@@ -44,16 +47,17 @@ const breadcrumbItemActive = document.querySelector('.breadcrumb-item.active');
 
 
 class Plants {
-    constructor(name, price, img) {
+    constructor(name, price, img, index) {
         this.name = name;
         this.price = price;
         this.img = img;
+        this.index = index;
     }
 }
-const bonsai = new Plants('Bonsai', '99,99$', 'images/bonsai2.jpg');
-const succulent = new Plants('Succulent', '19,99$', 'images/succulent1.jpg');
-const terranium = new Plants('Terranium', '59,99$', 'images/terranium1.jpg');
-const cactus = new Plants('Cactus', '29,99$', 'images/cactus1.jpg');
+const bonsai = new Plants('Bonsai', '99,99$', 'images/bonsai3.jpg', 0);
+const succulent = new Plants('Succulent', '19,99$', 'images/succulent1.jpg', 1);
+const terranium = new Plants('Terranium', '59,99$', 'images/terranium1.jpg', 2);
+const cactus = new Plants('Cactus', '29,99$', 'images/cactus1.jpg', 3);
 
 ///// Functions/////
 
@@ -150,8 +154,6 @@ const changeImage = (e) => {
 
     breadcrumbItemActive.textContent = mainProduct.name; // change the breadcrumb 
 
-
-
 }
 
 /// the same function like changeImage but on touchable devices
@@ -176,16 +178,73 @@ const changeImageOfTouch = (e) => {
 
 
 const footerImages = (e) => {
-    let i = Math.floor(Math.random() * 3);
-    let j = Math.floor(Math.random() * 4);
-    let plants = [bonsai, cactus, terranium, succulent];
-    console.log(i, plants[j]);
-    let plant = plants[j];
-    console.log(plant);
-    console.log(productFooterItems);
-    productFooterItems[i].children[0].src = plant.img;
-    productFooterItems[i].children[1].innerText = plant.name;
-    productFooterItems[i].children[2].innerText = plant.price;
+
+    // let j = Math.floor(Math.random() * 4);
+    // let plants = [bonsai, cactus, terranium, succulent];
+    // let plant = plants[j];
+
+ 
+    let nameTarget = e.target.parentNode.children[1].innerText.toLowerCase();
+    console.log(nameTarget);
+
+
+
+    if (nameTarget == 'cactus') {
+        productFooterItems[0].children[0].src = bonsai.img;
+        productFooterItems[0].children[1].innerText = bonsai.name;
+        productFooterItems[0].children[2].innerText = bonsai.price;
+
+        productFooterItems[1].children[0].src = terranium.img;
+        productFooterItems[1].children[1].innerText = terranium.name;
+        productFooterItems[1].children[2].innerText = terranium.price;
+
+        productFooterItems[2].children[0].src = succulent.img;
+        productFooterItems[2].children[1].innerText = succulent.name;
+        productFooterItems[2].children[2].innerText = succulent.price;
+    } else if (nameTarget == 'bonsai') {
+
+        productFooterItems[0].children[0].src = cactus.img;
+        productFooterItems[0].children[1].innerText = cactus.name;
+        productFooterItems[0].children[2].innerText = cactus.price;
+
+        productFooterItems[1].children[0].src = terranium.img;
+        productFooterItems[1].children[1].innerText = terranium.name;
+        productFooterItems[1].children[2].innerText = terranium.price;
+
+        productFooterItems[2].children[0].src = succulent.img;
+        productFooterItems[2].children[1].innerText = succulent.name;
+        productFooterItems[2].children[2].innerText = succulent.price;
+
+    } else if (nameTarget == 'terranium') {
+
+        productFooterItems[0].children[0].src = cactus.img;
+        productFooterItems[0].children[1].innerText = cactus.name;
+        productFooterItems[0].children[2].innerText = cactus.price;
+
+        productFooterItems[1].children[0].src = bonsai.img;
+        productFooterItems[1].children[1].innerText = bonsai.name;
+        productFooterItems[1].children[2].innerText = bonsai.price;
+
+        productFooterItems[2].children[0].src = succulent.img;
+        productFooterItems[2].children[1].innerText = succulent.name;
+        productFooterItems[2].children[2].innerText = succulent.price;
+
+    } else if (nameTarget == 'succulent') {
+
+        productFooterItems[0].children[0].src = cactus.img;
+        productFooterItems[0].children[1].innerText = cactus.name;
+        productFooterItems[0].children[2].innerText = cactus.price;
+
+        productFooterItems[1].children[0].src = terranium.img;
+        productFooterItems[1].children[1].innerText = terranium.name;
+        productFooterItems[1].children[2].innerText = terranium.price;
+
+        productFooterItems[2].children[0].src = bonsai.img;
+        productFooterItems[2].children[1].innerText = bonsai.name;
+        productFooterItems[2].children[2].innerText = bonsai.price;
+
+    }
+
 };
 
 
@@ -210,11 +269,11 @@ terraniumImage.addEventListener('click', changeImage);
 terraniumImage.addEventListener('click', footerImages);
 
 /// On touchable devices
-succulentImage.addEventListener('touchstart', changeImage);
-succulentImage.addEventListener('touchstart', footerImages);
+succulentTitle.addEventListener('touchstart', changeImage);
+succulentTitle.addEventListener('touchstart', footerImages);
 
-cactusImage.addEventListener('touchstart', changeImage);
-cactusImage.addEventListener('touchstart', footerImages);
+cactusTitle.addEventListener('touchstart', changeImage);
+cactusTitle.addEventListener('touchstart', footerImages);
 
-terraniumImage.addEventListener('touchstart', changeImage);
-terraniumImage.addEventListener('touchstart', footerImages);
+terraniumTitle.addEventListener('touchstart', changeImage);
+terraniumTitle.addEventListener('touchstart', footerImages);
