@@ -30,6 +30,7 @@ body {
     border-bottom: 1px solid $lightergray;
     background-color: $white;
 
+
     .nav-link {
         color: $black;
 
@@ -53,11 +54,6 @@ body {
     }
 }
 
-.navbar-light>div>button {
-    &:focus {
-        box-shadow: none;
-    }
-}
 
 
 
@@ -161,12 +157,20 @@ body {
 
 .product-footer-item img {
     width: 100%;
+
+    &:hover {
+        opacity: .5;
+        cursor: pointer;
+        transition: .2s;
+    }
 }
 
 .price {
     color: $text;
     font-size: .8em;
 }
+
+
 
 
 //Shopping cart

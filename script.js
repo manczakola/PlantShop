@@ -1,5 +1,8 @@
 ///// Variables/////
+
 const btnShopping = document.querySelectorAll(".btn-outline-secondary");
+
+// shopping cart variables
 const shoppingCartItems = document.querySelector(".shopping-cart-items");
 const shoppingCartDropdown = document.querySelector(".shopping-cart");
 const dropdownMenu = document.querySelector(".dropdown-menu");
@@ -7,9 +10,26 @@ const totalMoney = document.querySelector(".lighter-text");
 const badge = document.querySelector(".badge");
 const shoppingCartBtn = document.querySelector("#dropdownMenuButton");
 const numberOfItems = document.querySelector("number");
+let money = [];
+
+/// images variables
 const bigImage = document.querySelector("div.big-image > img");
 const smallImages = document.querySelectorAll('.image-item');
-let money = [];
+const succulentBox = document.querySelectorAll('#succulent');
+const succulentImage = document.querySelectorAll('#succulent')[0].children[0];
+
+const cactusBox = document.querySelectorAll('#cactus');
+const cactusImage = document.querySelectorAll('#cactus')[0].children[0];
+
+
+const terraniumBox = document.querySelectorAll('#terranium');
+const terraniumImage = document.querySelectorAll('#terranium')[0].children[0];
+
+/// Product description variables ///
+const productName = document.querySelector('.product-title h1');
+const productPrice = document.querySelector('.product-price h3');
+const productDescriptionParagraph = document.querySelector('.product-description p');
+
 
 
 ///// Functions/////
@@ -85,9 +105,27 @@ btnShopping.forEach((btn) =>
     }));
 
 
+/// function changing the image product
+const changeImage = (e) => {
+
+    const mainProduct = new Object();
+    mainProduct.img = e.target.parentNode.children[0].src;
+    mainProduct.name = (e.target.parentNode.children[1].innerText)
+    mainProduct.price = e.target.parentNode.children[2].innerText;
+
+    console.log(mainProduct);
+    bigImage.src = `images/${mainProduct.name}1.jpg`;
+    let i = 0;
+    smallImages.forEach(img => {
+        i++;
+        img.children[0].src = `images/succulent${i}.jpg`;
+    });
+    productName.textContent = mainProduct.name;
+    productPrice.textContent = mainProduct.price;
+}
 ///// Event listeners /////
 
-// event to change pictures on click
+// event to change pictures on click in main 
 smallImages.forEach(img => img.addEventListener('click', (e) => {
 
     const srcOfClickImage = img.children[0].src;
@@ -95,5 +133,9 @@ smallImages.forEach(img => img.addEventListener('click', (e) => {
     bigImage.src = srcOfClickImage;
 }));
 
-// document.querySelector('.navbar-toggler').addEventListener("touchstart", () => { document.querySelector('.navbar-toggler').classList.toggle('collapsed')
-// })
+succulentImage.addEventListener('click', changeImage);
+cactusImage.addEventListener('click', changeImage);
+terraniumImage.addEventListener('click', changeImage);
+succulentImage.addEventListener('touchstart', changeImage);
+cactusImage.addEventListener('touchstart', changeImage);
+terraniumImage.addEventListener('touchstart', changeImage);
