@@ -15,6 +15,7 @@ let money = [];
 /// images variables
 const bigImage = document.querySelector("div.big-image > img");
 const smallImages = document.querySelectorAll('.image-item');
+
 const succulentBox = document.querySelectorAll('#succulent');
 const succulentImage = document.querySelectorAll('#succulent')[0].children[0];
 
@@ -25,15 +26,36 @@ const cactusImage = document.querySelectorAll('#cactus')[0].children[0];
 const terraniumBox = document.querySelectorAll('#terranium');
 const terraniumImage = document.querySelectorAll('#terranium')[0].children[0];
 
+const productFooterItems = document.querySelectorAll('.product-footer-item')
+
 /// Product description variables ///
 const productName = document.querySelector('.product-title h1');
 const productPrice = document.querySelector('.product-price h3');
 const productDescriptionParagraph = document.querySelector('.product-description p');
 
+// Breadcrumb variables
+const breadcrumb = document.querySelectorAll('.breadcrumb');
+const breadcrumbItem = document.querySelector('.breadcrumb-item');
+const breadcrumbItemActive = document.querySelector('.breadcrumb-item.active');
 
+
+
+
+
+
+class Plants {
+    constructor(name, price, img) {
+        this.name = name;
+        this.price = price;
+        this.img = img;
+    }
+}
+const bonsai = new Plants('Bonsai', '99,99$', 'images/bonsai2.jpg');
+const succulent = new Plants('Succulent', '19,99$', 'images/succulent1.jpg');
+const terranium = new Plants('Terranium', '59,99$', 'images/terranium1.jpg');
+const cactus = new Plants('Cactus', '29,99$', 'images/cactus1.jpg');
 
 ///// Functions/////
-
 
 btnShopping.forEach((btn) =>
     btn.addEventListener("click", (e) => {
@@ -108,32 +130,39 @@ btnShopping.forEach((btn) =>
 /// function changing the image product
 const changeImage = (e) => {
 
-    const mainProduct = new Object();
+
+
+    const mainProduct = new Object(); //generate new object
     mainProduct.img = e.target.parentNode.children[0].src;
     mainProduct.name = e.target.parentNode.children[1].innerText;
     mainProduct.price = e.target.parentNode.children[2].innerText;
 
-    console.log(mainProduct);
-    bigImage.src = `images/${(mainProduct.name).toLowerCase()}1.jpg`;
+
+    bigImage.src = `images/${(mainProduct.name).toLowerCase()}1.jpg`; // change the big image
+
     let i = 0;
     smallImages.forEach(img => {
         i++;
         img.children[0].src = `images/${(mainProduct.name).toLowerCase()}${i}.jpg`;
-    });
-    productName.textContent = mainProduct.name;
-    productPrice.textContent = mainProduct.price;
+    }); // change the small images
+    productName.textContent = mainProduct.name; //change name of product
+    productPrice.textContent = mainProduct.price; // change price of product
+
+    breadcrumbItemActive.textContent = mainProduct.name; // change the breadcrumb 
+
+
+
 }
 
+/// the same function like changeImage but on touchable devices
 
 const changeImageOfTouch = (e) => {
-    console.log(e.touches[0].target);
 
     const mainProduct = new Object();
     mainProduct.img = e.touches[0].target.src;
     mainProduct.name = e.touches[0].target.parentNode.children[1].innerText;
     mainProduct.price = e.touches[0].target.parentNode.children[2].innerText;
 
-    console.log(mainProduct);
     bigImage.src = `images/${(mainProduct.name).toLowerCase()}1.jpg`;
     let i = 0;
     smallImages.forEach(img => {
@@ -143,6 +172,23 @@ const changeImageOfTouch = (e) => {
     productName.textContent = mainProduct.name;
     productPrice.textContent = mainProduct.price;
 }
+
+
+
+const footerImages = (e) => {
+    let i = Math.floor(Math.random() * 3);
+    let j = Math.floor(Math.random() * 4);
+    let plants = [bonsai, cactus, terranium, succulent];
+    console.log(i,plants[j]);
+    let plant = plants[j];
+    console.log(plant);
+    console.log(productFooterItems);
+    productFooterItems[i].children[0].src = plant.img;
+    productFooterItems[i].children[1].innerText = plant.name;
+    productFooterItems[i].children[2].innerText = plant.price;
+};
+
+
 ///// Event listeners /////
 
 // event to change pictures on click in main 
@@ -153,9 +199,22 @@ smallImages.forEach(img => img.addEventListener('click', (e) => {
     bigImage.src = srcOfClickImage;
 }));
 
+// Change image listeners
 succulentImage.addEventListener('click', changeImage);
+succulentImage.addEventListener('click', footerImages);
+
 cactusImage.addEventListener('click', changeImage);
+cactusImage.addEventListener('click', footerImages);
+
 terraniumImage.addEventListener('click', changeImage);
+terraniumImage.addEventListener('click', footerImages);
+
+/// On touchable devices
 succulentImage.addEventListener('touchstart', changeImage);
+succulentImage.addEventListener('touchstart', footerImages);
+
 cactusImage.addEventListener('touchstart', changeImage);
+cactusImage.addEventListener('touchstart', footerImages);
+
 terraniumImage.addEventListener('touchstart', changeImage);
+terraniumImage.addEventListener('touchstart', footerImages);
