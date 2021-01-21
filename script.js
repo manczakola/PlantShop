@@ -110,8 +110,28 @@ const changeImage = (e) => {
 
     const mainProduct = new Object();
     mainProduct.img = e.target.parentNode.children[0].src;
-    mainProduct.name = (e.target.parentNode.children[1].innerText)
+    mainProduct.name = e.target.parentNode.children[1].innerText;
     mainProduct.price = e.target.parentNode.children[2].innerText;
+
+    console.log(mainProduct);
+    bigImage.src = `images/${mainProduct.name}1.jpg`;
+    let i = 0;
+    smallImages.forEach(img => {
+        i++;
+        img.children[0].src = `images/succulent${i}.jpg`;
+    });
+    productName.textContent = mainProduct.name;
+    productPrice.textContent = mainProduct.price;
+}
+
+
+const changeImageOfTouch = (e) => {
+    console.log(e.touches[0].target);
+
+    const mainProduct = new Object();
+    mainProduct.img = e.touches[0].target.src;
+    mainProduct.name = e.touches[0].target.parentNode.children[1].innerText;
+    mainProduct.price = e.touches[0].target.parentNode.children[2].innerText;
 
     console.log(mainProduct);
     bigImage.src = `images/${mainProduct.name}1.jpg`;
