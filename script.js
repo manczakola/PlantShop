@@ -130,7 +130,7 @@ btnShopping.forEach((btn) =>
 /// function changing the image product
 const changeImage = (e) => {
 
-
+    window.scrollTo(0, 0);
 
     const mainProduct = new Object(); //generate new object
     mainProduct.img = e.target.parentNode.children[0].src;
@@ -157,7 +157,7 @@ const changeImage = (e) => {
 /// the same function like changeImage but on touchable devices
 
 const changeImageOfTouch = (e) => {
-
+    window.scrollTo(0, 0);
     const mainProduct = new Object();
     mainProduct.img = e.touches[0].target.src;
     mainProduct.name = e.touches[0].target.parentNode.children[1].innerText;
@@ -179,7 +179,7 @@ const footerImages = (e) => {
     let i = Math.floor(Math.random() * 3);
     let j = Math.floor(Math.random() * 4);
     let plants = [bonsai, cactus, terranium, succulent];
-    console.log(i,plants[j]);
+    console.log(i, plants[j]);
     let plant = plants[j];
     console.log(plant);
     console.log(productFooterItems);
