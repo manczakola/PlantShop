@@ -155,54 +155,64 @@ body {
 
 // Product-footer
 
-.product-footer-item img {
-    width: 100%;
+.product-footer-item {
 
-    &:hover {
-        opacity: .5;
+    >h5 {
         cursor: pointer;
-        transition: .2s;
+        &:hover {
+            font-weight: bold;
+            color:$button;
+        }}
+
+        img {
+            width: 100%;
+
+            &:hover {
+                opacity: .5;
+                cursor: pointer;
+                transition: .2s;
+            }
+        }
     }
-}
 
-.price {
-    color: $text;
-    font-size: .8em;
-}
-
-
-
-
-//Shopping cart
-.dropdown-menu {
-    left: -10em !important;
-    min-width: 300px !important;
-
-
-}
-
-.shopping-cart-items {
-    margin-left: -1em !important;
-
-}
-
-.clearfix {
-    margin: 0.7em 0;
-}
-
-.number {
-    font-weight: 700;
-
-}
-
-.badge {
-    color: $button !important;
-}
-
-.cancelItem {
-    margin-left: 1em;
-
-    &:hover {
-        transform: scale(1.2);
+    .price {
+        color: $text;
+        font-size: .8em;
     }
-}
+
+
+
+
+    //Shopping cart
+    .dropdown-menu {
+        left: -10em !important;
+        min-width: 300px !important;
+
+
+    }
+
+    .shopping-cart-items {
+        margin-left: -1em !important;
+
+    }
+
+    .clearfix {
+        margin: 0.7em 0;
+    }
+
+    .number {
+        font-weight: 700;
+
+    }
+
+    .badge {
+        color: $button !important;
+    }
+
+    .cancelItem {
+        margin-left: 1em;
+
+        &:hover {
+            transform: scale(1.2);
+        }
+    }

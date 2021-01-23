@@ -53,16 +53,11 @@ class Plants {
         this.img = img;
         this.index = index;
     }
-}
-const bonsai = new Plants('Bonsai', '99,99$', 'images/bonsai3.jpg', 0);
-const succulent = new Plants('Succulent', '19,99$', 'images/succulent1.jpg', 1);
-const terranium = new Plants('Terranium', '59,99$', 'images/terranium1.jpg', 2);
-const cactus = new Plants('Cactus', '29,99$', 'images/cactus1.jpg', 3);
+    
+    ///// Functions/////
 
-///// Functions/////
-
-btnShopping.forEach((btn) =>
-    btn.addEventListener("click", (e) => {
+    
+    addToShoppingCart(e) {
         const shoppingCart = new Object(); //create new object when click on 'add to chart' btn
         shoppingCart.value = parseFloat(e.target.parentNode.children[0].children[1].innerText);
         shoppingCart.name = e.target.parentNode.children[0].children[0].children[0].innerText;
@@ -71,13 +66,13 @@ btnShopping.forEach((btn) =>
 
         // add li items on shopping cart
         shoppingCartItems.innerHTML += `
-          <li class="clearfix">
-            <img src=${shoppingCart.img} />
-            <span class="item-name">${shoppingCart.name}</span>
-            <span class="item-price">${shoppingCart.value}$</span>
-            <span class='cancelItem btn btn-outline'>X</span>
-          </li>
-          `;
+        <li class="clearfix">
+        <img src=${shoppingCart.img} />
+        <span class="item-name">${shoppingCart.name}</span>
+        <span class="item-price">${shoppingCart.value}$</span>
+        <span class='cancelItem btn btn-outline'>X</span>
+        </li>
+        `;
         window.scrollTo(0, 0);
         document.querySelector('.navbar-toggler').classList.remove('collapsed');
         document.querySelector("#navbarToggler").classList.add('show');
@@ -128,129 +123,111 @@ btnShopping.forEach((btn) =>
 
 
 
-    }));
+    };
 
 
-/// function changing the image product
-const changeImage = (e) => {
+    /// function changing the image product
+    changeImage = (e) => {
 
-    window.scrollTo(0, 0);
+        window.scrollTo(0, 0);
 
-    const mainProduct = new Object(); //generate new object
-    mainProduct.img = e.target.parentNode.children[0].src;
-    mainProduct.name = e.target.parentNode.children[1].innerText;
-    mainProduct.price = e.target.parentNode.children[2].innerText;
-
-
-    bigImage.src = `images/${(mainProduct.name).toLowerCase()}1.jpg`; // change the big image
-
-    let i = 0;
-    smallImages.forEach(img => {
-        i++;
-        img.children[0].src = `images/${(mainProduct.name).toLowerCase()}${i}.jpg`;
-    }); // change the small images
-    productName.textContent = mainProduct.name; //change name of product
-    productPrice.textContent = mainProduct.price; // change price of product
-
-    breadcrumbItemActive.textContent = mainProduct.name; // change the breadcrumb 
-
-}
-
-/// the same function like changeImage but on touchable devices
-
-const changeImageOfTouch = (e) => {
-    window.scrollTo(0, 0);
-    const mainProduct = new Object();
-    mainProduct.img = e.touches[0].target.src;
-    mainProduct.name = e.touches[0].target.parentNode.children[1].innerText;
-    mainProduct.price = e.touches[0].target.parentNode.children[2].innerText;
-
-    bigImage.src = `images/${(mainProduct.name).toLowerCase()}1.jpg`;
-    let i = 0;
-    smallImages.forEach(img => {
-        i++;
-        img.children[0].src = `images/${(mainProduct.name).toLowerCase()}${i}.jpg`;
-    });
-    productName.textContent = mainProduct.name;
-    productPrice.textContent = mainProduct.price;
-}
+        const mainProduct = new Object(); //generate new object
+        mainProduct.img = e.target.parentNode.children[0].src;
+        mainProduct.name = e.target.parentNode.children[1].innerText;
+        mainProduct.price = e.target.parentNode.children[2].innerText;
 
 
+        bigImage.src = `images/${(mainProduct.name).toLowerCase()}1.jpg`; // change the big image
 
-const footerImages = (e) => {
+        let i = 0;
+        smallImages.forEach(img => {
+            i++;
+            img.children[0].src = `images/${(mainProduct.name).toLowerCase()}${i}.jpg`;
+        }); // change the small images
+        productName.textContent = mainProduct.name; //change name of product
+        productPrice.textContent = mainProduct.price; // change price of product
 
-    // let j = Math.floor(Math.random() * 4);
-    // let plants = [bonsai, cactus, terranium, succulent];
-    // let plant = plants[j];
-
- 
-    let nameTarget = e.target.parentNode.children[1].innerText.toLowerCase();
-    console.log(nameTarget);
-
-
-
-    if (nameTarget == 'cactus') {
-        productFooterItems[0].children[0].src = bonsai.img;
-        productFooterItems[0].children[1].innerText = bonsai.name;
-        productFooterItems[0].children[2].innerText = bonsai.price;
-
-        productFooterItems[1].children[0].src = terranium.img;
-        productFooterItems[1].children[1].innerText = terranium.name;
-        productFooterItems[1].children[2].innerText = terranium.price;
-
-        productFooterItems[2].children[0].src = succulent.img;
-        productFooterItems[2].children[1].innerText = succulent.name;
-        productFooterItems[2].children[2].innerText = succulent.price;
-    } else if (nameTarget == 'bonsai') {
-
-        productFooterItems[0].children[0].src = cactus.img;
-        productFooterItems[0].children[1].innerText = cactus.name;
-        productFooterItems[0].children[2].innerText = cactus.price;
-
-        productFooterItems[1].children[0].src = terranium.img;
-        productFooterItems[1].children[1].innerText = terranium.name;
-        productFooterItems[1].children[2].innerText = terranium.price;
-
-        productFooterItems[2].children[0].src = succulent.img;
-        productFooterItems[2].children[1].innerText = succulent.name;
-        productFooterItems[2].children[2].innerText = succulent.price;
-
-    } else if (nameTarget == 'terranium') {
-
-        productFooterItems[0].children[0].src = cactus.img;
-        productFooterItems[0].children[1].innerText = cactus.name;
-        productFooterItems[0].children[2].innerText = cactus.price;
-
-        productFooterItems[1].children[0].src = bonsai.img;
-        productFooterItems[1].children[1].innerText = bonsai.name;
-        productFooterItems[1].children[2].innerText = bonsai.price;
-
-        productFooterItems[2].children[0].src = succulent.img;
-        productFooterItems[2].children[1].innerText = succulent.name;
-        productFooterItems[2].children[2].innerText = succulent.price;
-
-    } else if (nameTarget == 'succulent') {
-
-        productFooterItems[0].children[0].src = cactus.img;
-        productFooterItems[0].children[1].innerText = cactus.name;
-        productFooterItems[0].children[2].innerText = cactus.price;
-
-        productFooterItems[1].children[0].src = terranium.img;
-        productFooterItems[1].children[1].innerText = terranium.name;
-        productFooterItems[1].children[2].innerText = terranium.price;
-
-        productFooterItems[2].children[0].src = bonsai.img;
-        productFooterItems[2].children[1].innerText = bonsai.name;
-        productFooterItems[2].children[2].innerText = bonsai.price;
+        breadcrumbItemActive.textContent = mainProduct.name; // change the breadcrumb 
 
     }
+    /// the same function like changeImage but on touchable devices
 
-};
+    changeImageOfTouch = (e) => {
+        window.scrollTo(0, 0);
+        const mainProduct = new Object();
+        mainProduct.img = e.touches[0].target.src;
+        mainProduct.name = e.touches[0].target.parentNode.children[1].innerText;
+        mainProduct.price = e.touches[0].target.parentNode.children[2].innerText;
+
+        bigImage.src = `images/${(mainProduct.name).toLowerCase()}1.jpg`;
+        let i = 0;
+        smallImages.forEach(img => {
+            i++;
+            img.children[0].src = `images/${(mainProduct.name).toLowerCase()}${i}.jpg`;
+        });
+        productName.textContent = mainProduct.name;
+        productPrice.textContent = mainProduct.price;
+    }
+
+
+    /// Function change the other plants in footer
+
+    footerImages = (e) => {
+
+        plants.changeImage(e)
+
+        setTimeout(() => {
+            let nameTarget = this.name;
+
+            function checkWord(namePlant) {
+                if (typeof namePlant == 'object') {
+                    return namePlant.name == nameTarget
+                } else {
+                    return namePlant == nameTarget
+                }
+
+            }
+
+            let indexPlanties = planties.findIndex(checkWord);
+
+            planties.splice(indexPlanties, 1);
+
+            for (let j = 0; j < planties.length; j++) {
+                const pfi = productFooterItems[j];
+                pfi.children[0].src = planties[j].img;
+                pfi.children[1].innerText = planties[j].name;
+                pfi.children[2].innerText = planties[j].price;
+
+            }
+
+        }, 1000);
+
+        planties = [bonsai, succulent, terranium, cactus];
+    };
+}
+const plants = new Plants();
+const bonsai = new Plants('Bonsai', '99,99$', 'images/bonsai3.jpg', 0);
+const succulent = new Plants('Succulent', '19,99$', 'images/succulent1.jpg', 1);
+const terranium = new Plants('Terranium', '59,99$', 'images/terranium1.jpg', 2);
+const cactus = new Plants('Cactus', '29,99$', 'images/cactus1.jpg', 3);
+
+let planties = [bonsai, succulent, terranium, cactus];
+
+
+
+
+
+
+
+
 
 
 ///// Event listeners /////
 
-// event to change pictures on click in main 
+btnShopping.forEach((btn) =>
+    btn.addEventListener("click", plants.addToShoppingCart));
+
+// event to change pictures on click in main section
 smallImages.forEach(img => img.addEventListener('click', (e) => {
 
     const srcOfClickImage = img.children[0].src;
@@ -258,22 +235,12 @@ smallImages.forEach(img => img.addEventListener('click', (e) => {
     bigImage.src = srcOfClickImage;
 }));
 
-// Change image listeners
-succulentImage.addEventListener('click', changeImage);
-succulentImage.addEventListener('click', footerImages);
+// Change image listeners // 
+succulentImage.addEventListener('click', succulent.footerImages);
+cactusImage.addEventListener('click', cactus.footerImages);
+terraniumImage.addEventListener('click', terranium.footerImages);
 
-cactusImage.addEventListener('click', changeImage);
-cactusImage.addEventListener('click', footerImages);
-
-terraniumImage.addEventListener('click', changeImage);
-terraniumImage.addEventListener('click', footerImages);
-
-/// On touchable devices
-succulentTitle.addEventListener('touchstart', changeImage);
-succulentTitle.addEventListener('touchstart', footerImages);
-
-cactusTitle.addEventListener('touchstart', changeImage);
-cactusTitle.addEventListener('touchstart', footerImages);
-
-terraniumTitle.addEventListener('touchstart', changeImage);
-terraniumTitle.addEventListener('touchstart', footerImages);
+/// On touchable devices ///
+succulentTitle.addEventListener('touchstart', succulent.footerImages);
+cactusTitle.addEventListener('touchstart', cactus.footerImages);
+terraniumTitle.addEventListener('touchstart', terranium.footerImages);
