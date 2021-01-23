@@ -53,10 +53,10 @@ class Plants {
         this.img = img;
         this.index = index;
     }
-    
+
     ///// Functions/////
 
-    
+
     addToShoppingCart(e) {
         const shoppingCart = new Object(); //create new object when click on 'add to chart' btn
         shoppingCart.value = parseFloat(e.target.parentNode.children[0].children[1].innerText);
@@ -244,3 +244,25 @@ terraniumImage.addEventListener('click', terranium.footerImages);
 succulentTitle.addEventListener('touchstart', succulent.footerImages);
 cactusTitle.addEventListener('touchstart', cactus.footerImages);
 terraniumTitle.addEventListener('touchstart', terranium.footerImages);
+
+
+
+
+const swipePhoto = (e) => {
+
+
+    let imageName = productName.textContent.toLowerCase();
+
+    if (bigImage.src.match(`images/${imageName}1.jpg`)) {
+        bigImage.src = `images/${imageName}2.jpg`;
+    } else if (bigImage.src.match(`images/${imageName}2.jpg`)) {
+        bigImage.src = `images/${imageName}3.jpg`;
+    } else {
+        bigImage.src = `images/${imageName}1.jpg`;
+    }
+}
+
+
+
+
+bigImage.addEventListener('touchstart', swipePhoto);
