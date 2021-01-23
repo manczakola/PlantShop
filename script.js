@@ -204,6 +204,23 @@ class Plants {
 
         planties = [bonsai, succulent, terranium, cactus];
     };
+
+
+
+    swipePhoto = (e) => {
+
+
+        let imageName = productName.textContent.toLowerCase();
+
+        if (bigImage.src.match(`images/${imageName}1.jpg`)) {
+            bigImage.src = `images/${imageName}2.jpg`;
+        } else if (bigImage.src.match(`images/${imageName}2.jpg`)) {
+            bigImage.src = `images/${imageName}3.jpg`;
+        } else {
+            bigImage.src = `images/${imageName}1.jpg`;
+        }
+    }
+
 }
 const plants = new Plants();
 const bonsai = new Plants('Bonsai', '99,99$', 'images/bonsai3.jpg', 0);
@@ -227,7 +244,7 @@ let planties = [bonsai, succulent, terranium, cactus];
 btnShopping.forEach((btn) =>
     btn.addEventListener("click", plants.addToShoppingCart));
 
-// event to change pictures on click in main section
+// event to change pictures on click in main section    
 smallImages.forEach(img => img.addEventListener('click', (e) => {
 
     const srcOfClickImage = img.children[0].src;
@@ -248,21 +265,7 @@ terraniumTitle.addEventListener('touchstart', terranium.footerImages);
 
 
 
-const swipePhoto = (e) => {
-
-
-    let imageName = productName.textContent.toLowerCase();
-
-    if (bigImage.src.match(`images/${imageName}1.jpg`)) {
-        bigImage.src = `images/${imageName}2.jpg`;
-    } else if (bigImage.src.match(`images/${imageName}2.jpg`)) {
-        bigImage.src = `images/${imageName}3.jpg`;
-    } else {
-        bigImage.src = `images/${imageName}1.jpg`;
-    }
-}
 
 
 
-
-bigImage.addEventListener('touchstart', swipePhoto);
+bigImage.addEventListener('touchstart', plants.swipePhoto);
