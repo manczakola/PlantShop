@@ -15,6 +15,10 @@ let money = [];
 /// images variables
 const bigImage = document.querySelector("div.big-image > img");
 const smallImages = document.querySelectorAll('.image-item');
+const previous = document.querySelector('.fa-chevron-left');
+const next = document.querySelector('.fa-chevron-right');
+
+
 
 const succulentBox = document.querySelectorAll('#succulent');
 const succulentImage = document.querySelectorAll('#succulent')[0].children[0];
@@ -59,9 +63,9 @@ class Plants {
 
     addToShoppingCart(e) {
         const shoppingCart = new Object(); //create new object when click on 'add to chart' btn
-        shoppingCart.value = parseFloat(e.target.parentNode.children[0].children[1].innerText);
-        shoppingCart.name = e.target.parentNode.children[0].children[0].children[0].innerText;
-        shoppingCart.img = e.target.parentNode.parentNode.children[0].children[0].children[0].children[0].src;
+        shoppingCart.value = parseFloat(productPrice.innerText);
+        shoppingCart.name = productName.innerText;
+        shoppingCart.img = `images/${productName.innerText.toLowerCase()}1.jpg`;
         // download values of this object
 
         // add li items on shopping cart
@@ -70,7 +74,7 @@ class Plants {
         <img src=${shoppingCart.img} />
         <span class="item-name">${shoppingCart.name}</span>
         <span class="item-price">${shoppingCart.value}$</span>
-        <span class='cancelItem btn btn-outline'>X</span>
+        <span class='cancelItem btn btn-outline'></span>
         </li>
         `;
         window.scrollTo(0, 0);
@@ -207,7 +211,7 @@ class Plants {
 
 
 
-    swipePhoto = (e) => {
+    nextPhoto = (e) => {
 
 
         let imageName = productName.textContent.toLowerCase();
@@ -218,6 +222,21 @@ class Plants {
             bigImage.src = `images/${imageName}3.jpg`;
         } else {
             bigImage.src = `images/${imageName}1.jpg`;
+        }
+        console.log(bigImage.src);
+    }
+
+   previousPhoto = (e) => {
+
+
+        let imageName = productName.textContent.toLowerCase();
+
+        if (bigImage.src.match(`images/${imageName}1.jpg`)) {
+            bigImage.src = `images/${imageName}3.jpg`;
+        } else if (bigImage.src.match(`images/${imageName}2.jpg`)) {
+            bigImage.src = `images/${imageName}1.jpg`;
+        } else {
+            bigImage.src = `images/${imageName}2.jpg`;
         }
     }
 
@@ -257,6 +276,9 @@ succulentImage.addEventListener('click', succulent.footerImages);
 cactusImage.addEventListener('click', cactus.footerImages);
 terraniumImage.addEventListener('click', terranium.footerImages);
 
+next.addEventListener('click', plants.nextPhoto);
+previous.addEventListener('click', plants.previousPhoto);
+
 /// On touchable devices ///
 succulentTitle.addEventListener('touchstart', succulent.footerImages);
 cactusTitle.addEventListener('touchstart', cactus.footerImages);
@@ -265,7 +287,3 @@ terraniumTitle.addEventListener('touchstart', terranium.footerImages);
 
 
 
-
-
-
-bigImage.addEventListener('touchstart', plants.swipePhoto);
