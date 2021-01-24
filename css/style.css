@@ -205,6 +205,8 @@ body {
 .dropdown-menu {
   left: -10em !important;
   min-width: 300px !important;
+  display: -ms-grid;
+  display: grid;
 }
 
 .shopping-cart-items {
@@ -213,6 +215,8 @@ body {
 
 .clearfix {
   margin: 0.7em 0;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
 }
 
 .number {
@@ -224,7 +228,6 @@ body {
 }
 
 .cancelItem {
-  margin-left: 1em;
   font-family: "Font Awesome 5 Free";
   color: #525253;
 }
