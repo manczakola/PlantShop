@@ -1,0 +1,44 @@
+@import 'variables';
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap');
+.product-item{
+  padding: 4rem 1rem;
+  border-bottom: 1px solid $gray;
+  text-align: center;
+
+    img{
+        object-fit: cover;
+        object-position: center;
+        height: 50vh;
+        width:100%;
+        padding: 1rem;
+        cursor: pointer;
+        
+        &:hover {
+            opacity: .5;
+            cursor: pointer;
+            transition: .2s;
+        }
+    }
+}
+
+header{
+    color: $black;
+    text-align: center;
+    height: 30vh;
+    padding: 2rem 1rem 4rem 1rem;
+    border-bottom: 1px solid $gray;
+    
+    h2{
+        font-size: 3rem;
+        color: $button-hover;
+        padding: 2rem 0;
+        letter-spacing: 2px;
+    }
+    h4{
+        font-size: 2rem;
+        color: $lightergray;
+        font-family: 'Amatic SC', cursive;
+        
+        letter-spacing: 1px;
+    }
+}

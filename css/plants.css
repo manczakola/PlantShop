@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css?family=Pontano+Sans");
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap");
+.product-item {
+  padding: 4rem 1rem;
+  border-bottom: 1px solid #ddd5d5;
+  text-align: center;
+}
+
+.product-item img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  height: 50vh;
+  width: 100%;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.product-item img:hover {
+  opacity: .5;
+  cursor: pointer;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+header {
+  color: #646262;
+  text-align: center;
+  height: 30vh;
+  padding: 2rem 1rem 4rem 1rem;
+  border-bottom: 1px solid #ddd5d5;
+}
+
+header h2 {
+  font-size: 3rem;
+  color: #525253;
+  padding: 2rem 0;
+  letter-spacing: 2px;
+}
+
+header h4 {
+  font-size: 2rem;
+  color: #cfcece;
+  font-family: 'Amatic SC', cursive;
+  letter-spacing: 1px;
+}
+/*# sourceMappingURL=plants.css.map */
