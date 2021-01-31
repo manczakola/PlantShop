@@ -1,13 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Pontano+Sans');
-
-$white: #fff;
-$black: rgb(100, 98, 98);
-$lightergray: #cfcece;
-$lightgray: #e6ece8;
-$gray: #ddd5d5;
-$text: rgb(133, 129, 129);
-$button: #3e3e3f;
-$button-hover: #525253;
+@import 'variables';
 
 * {
     box-sizing: border-box;
@@ -40,21 +31,32 @@ body {
             transition: all .2s ease-in;
         }
 
-        @media (max-width:500px) {
-            font-size: .9em;
-            padding: 0;
-            margin: .5em .3em;
-        }
-
-        @media (max-width:365px) {
-            font-size: .8em;
-            padding: 0;
-            margin: .5em .3em;
-        }
     }
 }
 
 
+
+@media (max-width:500px) {
+    .navbar {
+        z-index: 1;
+        list-style: none;
+        margin-top: .8rem !important;
+        flex-direction: column;
+        display: none;
+        width: 100%;
+        left: 0;
+        padding: 1rem !important;
+        background: #fff;
+        text-align: center;
+
+        .active {
+            display: flex;
+        }
+    }
+    .nav-item{
+        width:100%;
+    }
+}
 
 
 // Breadcrumb
@@ -220,14 +222,24 @@ body {
 
 
 //Shopping cart
+
+@media (min-width:500px) {
 .dropdown-menu {
     left: -10em !important;
     min-width: 300px !important;
-    display:grid;
+    display: grid;
+}}
 
 
+@media (max-width:500px) {
+    .dropdown-menu {
+       min-width: 100% !important;
+    }
+#dropdownMenuButton{
+    width:100%;
 }
-
+}
+ 
 .shopping-cart-items {
     margin-left: -1em !important;
 
@@ -248,7 +260,7 @@ body {
 }
 
 .cancelItem {
-    
+
     font-family: "Font Awesome 5 Free";
     color: $button-hover;
 
@@ -261,3 +273,14 @@ body {
     }
 }
 
+// Footer 
+
+footer{
+    color: $black;
+    text-align: center;
+    padding: 3rem 0 1rem 0;
+    a {
+        text-decoration: none;
+        color:$button
+    }
+}

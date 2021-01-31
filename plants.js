@@ -22,23 +22,23 @@ const bigImage = document.querySelector("div.big-image > img");
 const smallImages = document.querySelectorAll('.image-item');
 const previous = document.querySelector('.fa-chevron-left');
 const next = document.querySelector('.fa-chevron-right');
-const productFooterItems = document.querySelectorAll('.product-footer-item');
 
 
-const succulentBox = productFooterItems[0];
-const succulentImage = succulentBox.children[0];
-const succulentTitle = succulentBox.children[1];
 
-const cactusBox = productFooterItems[1];
-const cactusImage = cactusBox.children[0];
-const cactusTitle = cactusBox.children[1];
+const succulentBox = document.querySelectorAll('#succulent');
+const succulentImage = document.querySelectorAll('#succulent')[0].children[0];
+const succulentTitle = document.querySelectorAll('#succulent')[0].children[1];
 
-
-const terraniumBox =productFooterItems[2];
-const terraniumImage = terraniumBox.children[0];
-const terraniumTitle = terraniumBox.children[1];
+const cactusBox = document.querySelectorAll('#cactus');
+const cactusImage = document.querySelectorAll('#cactus')[0].children[0];
+const cactusTitle = document.querySelectorAll('#cactus')[0].children[1];
 
 
+const terraniumBox = document.querySelectorAll('#terranium');
+const terraniumImage = document.querySelectorAll('#terranium')[0].children[0];
+const terraniumTitle = document.querySelectorAll('#terranium')[0].children[1];
+
+const productFooterItems = document.querySelectorAll('.product-footer-item')
 
 /// Product description variables ///
 const productName = document.querySelector('.product-title h1');
@@ -170,6 +170,7 @@ class Plants {
 
 
 
+
         // remove items on 'trash' btn
 
         cancelItem.forEach(btn => btn.addEventListener('click', (e) => {
@@ -177,7 +178,6 @@ class Plants {
         // dont hide ul list of shopping cart when remove items
         document.getElementById("dropdownMenuButton").classList.add('show')
         document.querySelector(".dropdown-menu").classList.add('show');
-
             // value in $ of cancel item
             let cancelValue = parseFloat(e.target.parentNode.children[2].innerText);
 
@@ -211,114 +211,11 @@ class Plants {
     }
 
 
-    /// function changing the image product
-    changeImage = (e) => {
 
-        window.scrollTo(0, 0);
-
-        const mainProduct = new Object(); //generate new object
-        mainProduct.img = e.target.parentNode.children[0].src;
-        mainProduct.name = e.target.parentNode.children[1].innerText;
-        mainProduct.price = e.target.parentNode.children[2].innerText;
+     
+  
 
 
-        bigImage.src = `images/${(mainProduct.name).toLowerCase()}1.jpg`; // change the big image
-
-        let i = 0;
-        smallImages.forEach(img => {
-            i++;
-            img.children[0].src = `images/${(mainProduct.name).toLowerCase()}${i}.jpg`;
-        }); // change the small images
-        productName.textContent = mainProduct.name; //change name of product
-        productPrice.textContent = mainProduct.price; // change price of product
-
-        breadcrumbItemActive.textContent = mainProduct.name; // change the breadcrumb 
-
-    }
-    /// the same function like changeImage but on touchable devices
-
-    changeImageOfTouch = (e) => {
-        window.scrollTo(0, 0);
-        const mainProduct = new Object();
-        mainProduct.img = e.touches[0].target.src;
-        mainProduct.name = e.touches[0].target.parentNode.children[1].innerText;
-        mainProduct.price = e.touches[0].target.parentNode.children[2].innerText;
-
-        bigImage.src = `images/${(mainProduct.name).toLowerCase()}1.jpg`;
-        let i = 0;
-        smallImages.forEach(img => {
-            i++;
-            img.children[0].src = `images/${(mainProduct.name).toLowerCase()}${i}.jpg`;
-        });
-        productName.textContent = mainProduct.name;
-        productPrice.textContent = mainProduct.price;
-    }
-
-
-    /// Function change the other plants in footer
-
-    footerImages = (e) => {
-
-        plants.changeImage(e)
-
-        setTimeout(() => {
-            let nameTarget = this.name;
-
-            function checkWord(namePlant) {
-                if (typeof namePlant == 'object') {
-                    return namePlant.name == nameTarget
-                } else {
-                    return namePlant == nameTarget
-                }
-
-            }
-
-            let indexPlanties = planties.findIndex(checkWord);
-
-            planties.splice(indexPlanties, 1);
-
-            for (let j = 0; j < planties.length; j++) {
-                const pfi = productFooterItems[j];
-                pfi.children[0].src = planties[j].img;
-                pfi.children[1].innerText = planties[j].name;
-                pfi.children[2].innerText = planties[j].price;
-
-            }
-
-        }, 1000);
-
-        planties = [bonsai, succulent, terranium, cactus];
-    };
-
-
-
-    nextPhoto = (e) => {
-
-
-        let imageName = productName.textContent.toLowerCase();
-
-        if (bigImage.src.match(`images/${imageName}1.jpg`)) {
-            bigImage.src = `images/${imageName}2.jpg`;
-        } else if (bigImage.src.match(`images/${imageName}2.jpg`)) {
-            bigImage.src = `images/${imageName}3.jpg`;
-        } else {
-            bigImage.src = `images/${imageName}1.jpg`;
-        }
-    }
-
-    previousPhoto = (e) => {
-
-
-        let imageName = productName.textContent.toLowerCase();
-
-        if (bigImage.src.match(`images/${imageName}1.jpg`)) {
-            bigImage.src = `images/${imageName}3.jpg`;
-        } else if (bigImage.src.match(`images/${imageName}2.jpg`)) {
-            bigImage.src = `images/${imageName}1.jpg`;
-        } else {
-            bigImage.src = `images/${imageName}2.jpg`;
-        }
-    }
 
 
 
@@ -358,18 +255,3 @@ hamburgerMenuBtn.addEventListener('click', () => {
     document.querySelector("#navbarToggler > div > ul").classList.toggle('active')
 })
 
-
-
-
-// Change image listeners // 
-succulentImage.addEventListener('click', succulent.footerImages);
-cactusImage.addEventListener('click', cactus.footerImages);
-terraniumImage.addEventListener('click', terranium.footerImages);
-
-next.addEventListener('click', plants.nextPhoto);
-previous.addEventListener('click', plants.previousPhoto);
-
-/// On touchable devices ///
-succulentTitle.addEventListener('touchstart', succulent.footerImages);
-cactusTitle.addEventListener('touchstart', cactus.footerImages);
-terraniumTitle.addEventListener('touchstart', terranium.footerImages);
