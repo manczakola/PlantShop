@@ -31,9 +31,17 @@ body {
   transition: all .2s ease-in;
 }
 
+.navbar-expand-lg .logo {
+  width: 40px;
+}
+
+.navbar-expand-lg .fa-shopping-cart:before {
+  margin: 4px !important;
+}
+
 @media (max-width: 500px) {
   .navbar {
-    z-index: 1;
+    z-index: 10;
     list-style: none;
     margin-top: .8rem !important;
     -webkit-box-orient: vertical;
@@ -43,7 +51,7 @@ body {
     display: none;
     width: 100%;
     left: 0;
-    padding: 1rem !important;
+    padding: 1rem 0 !important;
     background: #fff;
     text-align: center;
   }
@@ -223,7 +231,8 @@ body {
 
 @media (max-width: 500px) {
   .dropdown-menu {
-    min-width: 100% !important;
+    min-width: 85vw !important;
+    left: -10vw !important;
   }
   #dropdownMenuButton {
     width: 100%;

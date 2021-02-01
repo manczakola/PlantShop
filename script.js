@@ -34,7 +34,7 @@ const cactusImage = cactusBox.children[0];
 const cactusTitle = cactusBox.children[1];
 
 
-const terraniumBox =productFooterItems[2];
+const terraniumBox = productFooterItems[2];
 const terraniumImage = terraniumBox.children[0];
 const terraniumTitle = terraniumBox.children[1];
 
@@ -165,52 +165,44 @@ class Plants {
 
     removeFromShoppingCart(e) {
 
-        const cancelItem = document.querySelectorAll('.cancelItem');
-
-
-
-
-        // remove items on 'trash' btn
-
-        cancelItem.forEach(btn => btn.addEventListener('click', (e) => {
-
-        // dont hide ul list of shopping cart when remove items
-        document.getElementById("dropdownMenuButton").classList.add('show')
+        const cancelItem = document.querySelectorAll('.cancelItem'); document.getElementById("dropdownMenuButton").classList.add('show')
         document.querySelector(".dropdown-menu").classList.add('show');
-
-            // value in $ of cancel item
-            let cancelValue = parseFloat(e.target.parentNode.children[2].innerText);
-
-            e.target.parentNode.remove(); // remove li item
-            items.pop(e.target.parentNode) //remove item from items array
-            localStorage.setItem('item', JSON.stringify(items)); // update localStorage
-
-
-            // change number of cart items
-            shoppingCartBtn.parentNode.children[0].children[0].innerText--;
-
-            money.pop(cancelValue); // remove $$ from money array
-
-            if (money.length > 0) {
-                var total = money.reduce(function (a, b) {
-                    return a + b;
-                });
-            };
-
-            if (money.length == 0) {
-                totalMoney.innerText = `Total:0$`;
-                badgeInShoppingCart.innerText = `0`;
-                dropdownMenu.classList.remove('show'); // when nothing is in the shopping cart, hide ul list
-            } else {
-                totalMoney.innerText = `Total: ${total}$`;
-                badgeInShoppingCart.innerText--;
-            }
-        }));
-
-
+        cancelItem.forEach(btn => btn.addEventListener('click', plants.removeOnBtn));
+    
     }
 
 
+    // remove items on 'trash' btn
+    removeOnBtn(e) {
+
+        // value in $ of cancel item
+        let cancelValue = parseFloat(e.target.parentNode.children[2].innerText);
+
+        e.target.parentNode.remove(); // remove li item
+        items.pop(e.target.parentNode) //remove item from items array
+        localStorage.setItem('item', JSON.stringify(items)); // update localStorage
+
+
+        // change number of cart items
+        shoppingCartBtn.parentNode.children[0].children[0].innerText--;
+
+        money.pop(cancelValue); // remove $$ from money array
+
+        if (money.length > 0) {
+            var total = money.reduce(function (a, b) {
+                return a + b;
+            });
+        };
+
+        if (money.length == 0) {
+            totalMoney.innerText = `Total:0$`;
+            badgeInShoppingCart.innerText = `0`;
+            dropdownMenu.classList.remove('show'); // when nothing is in the shopping cart, hide ul list
+        } else {
+            totalMoney.innerText = `Total: ${total}$`;
+            badgeInShoppingCart.innerText--;
+        }
+    }
     /// function changing the image product
     changeImage = (e) => {
 
