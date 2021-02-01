@@ -60,6 +60,9 @@ body {
     display: -ms-flexbox;
     display: flex;
   }
+  .logo {
+    width: 7vw;
+  }
   .nav-item {
     width: 100%;
   }
