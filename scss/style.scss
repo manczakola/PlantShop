@@ -35,7 +35,8 @@ body {
 
 
     .logo {
-        width: 5vw;
+        width: 10vw;
+        max-width: 30px;
     }
 
     .fa-shopping-cart:before {
@@ -60,10 +61,6 @@ body {
         .active {
             display: flex;
         }
-    }
-
-    .logo {
-        width: 7vw;
     }
 
     .nav-item {
