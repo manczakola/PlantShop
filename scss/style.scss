@@ -19,7 +19,7 @@ body {
 
 .navbar-expand-lg {
     border-bottom: 1px solid $lightergray;
-    background-color: $white; 
+    background-color: $white;
 
 
     .nav-link {
@@ -32,15 +32,15 @@ body {
         }
 
     }
-    
-    
-    .logo{
-    width:5vw;
-}
 
-.fa-shopping-cart:before {
-    margin: 4px !important;
-}
+
+    .logo {
+        width: 5vw;
+    }
+
+    .fa-shopping-cart:before {
+        margin: 4px !important;
+    }
 }
 
 
@@ -62,11 +62,14 @@ body {
         }
     }
 
-
-    .nav-item{
-        width:100%;
+    .logo {
+        width: 7vw;
     }
-   
+
+    .nav-item {
+        width: 100%;
+    }
+
 }
 
 
@@ -235,11 +238,12 @@ body {
 //Shopping cart
 
 @media (min-width:500px) {
-.dropdown-menu {
-    left: -10em !important;
-    min-width: 300px !important;
-    display: grid;
-}}
+    .dropdown-menu {
+        left: -10em !important;
+        min-width: 300px !important;
+        display: grid;
+    }
+}
 
 
 @media (max-width:500px) {
@@ -247,11 +251,12 @@ body {
         min-width: 85vw !important;
         left: -10vw !important;
     }
-#dropdownMenuButton{
-    width:100%;
+
+    #dropdownMenuButton {
+        width: 100%;
+    }
 }
-}
- 
+
 .shopping-cart-items {
     margin-left: -1em !important;
 
@@ -286,12 +291,13 @@ body {
 
 // Footer 
 
-footer{
+footer {
     color: $black;
     text-align: center;
     padding: 3rem 0 1rem 0;
+
     a {
         text-decoration: none;
-        color:$button
+        color: $button
     }
 }
