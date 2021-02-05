@@ -70,6 +70,7 @@ body {
 .breadcrumb {
   border-bottom: none;
   margin-top: 30px;
+  cursor: pointer;
 }
 
 .breadcrumb ul {
@@ -113,7 +114,7 @@ body {
   display: flex;
 }
 
-.slider__handle {
+.slider {
   position: absolute;
   margin: 0 auto;
   width: 100%;
@@ -130,15 +131,15 @@ body {
   z-index: 1;
 }
 
-.slider__handle .fa-chevron-left,
-.slider__handle .fa-chevron-right {
+.slider .fa-chevron-left,
+.slider .fa-chevron-right {
   padding: 15px;
   color: #cfcece;
   cursor: pointer;
 }
 
-.slider__handle .fa-chevron-left:hover,
-.slider__handle .fa-chevron-right:hover {
+.slider .fa-chevron-left:hover,
+.slider .fa-chevron-right:hover {
   color: #525253;
 }
 

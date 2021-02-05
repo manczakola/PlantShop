@@ -76,6 +76,7 @@ body {
 .breadcrumb {
     border-bottom: none;
     margin-top: 30px;
+    cursor: pointer;
 
     ul {
         margin-left: 100px;
@@ -123,7 +124,7 @@ body {
 }
 
 
-.slider__handle {
+.slider {
     position: absolute;
     margin: 0 auto;
     width: 100%;
