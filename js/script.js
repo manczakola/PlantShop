@@ -1,3 +1,8 @@
+
+
+
+
+
 ///// Variables/////
 
 const btnShopping = document.querySelectorAll(".btn-outline-secondary");
@@ -46,12 +51,9 @@ const productPrice = document.querySelector('.product-price h3');
 const productDescriptionParagraph = document.querySelector('.product-description p');
 
 // Breadcrumb variables
-const breadcrumb = document.querySelectorAll('.breadcrumb');
-const breadcrumbItem = document.querySelector('.breadcrumb-item');
+const breadcrumb = document.querySelector('.breadcrumb');
+const breadcrumbItem = document.querySelectorAll('.breadcrumb-item');
 const breadcrumbItemActive = document.querySelector('.breadcrumb-item.active');
-
-
-
 
 
 
@@ -365,3 +367,8 @@ previous.addEventListener('click', plants.previousPhoto);
 succulentTitle.addEventListener('touchstart', succulent.footerImages);
 cactusTitle.addEventListener('touchstart', cactus.footerImages);
 terraniumTitle.addEventListener('touchstart', terranium.footerImages);
+
+// exports
+
+export default Plants;
+export {breadcrumb,breadcrumbItem,breadcrumbItemActive}

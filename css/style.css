@@ -38,6 +38,7 @@ body {
 
 .navbar-expand-lg .fa-shopping-cart:before {
   margin: 4px !important;
+  font-size: 1.3em;
 }
 
 @media (max-width: 500px) {
