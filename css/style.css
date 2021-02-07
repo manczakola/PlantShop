@@ -11,12 +11,12 @@
 
 body {
   font-family: 'Pontano Sans', sans-serif !important;
+  padding-top: 2vh;
 }
 
 .navbar-expand-lg {
   border-bottom: 1px solid #cfcece;
   background-color: #fff;
-  padding-top: 5vh;
 }
 
 .navbar-expand-lg .nav-link {
@@ -225,7 +225,6 @@ body {
 
 @media (min-width: 500px) {
   .dropdown-menu {
-    left: -10em !important;
     min-width: 300px !important;
     display: -ms-grid;
     display: grid;
@@ -235,7 +234,7 @@ body {
 @media (max-width: 500px) {
   .dropdown-menu {
     min-width: 85vw !important;
-    left: -10vw !important;
+    position: relative !important;
   }
   #dropdownMenuButton {
     width: 100%;

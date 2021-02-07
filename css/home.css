@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Pontano+Sans");
-.jumbotron {
+.container.product {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+
+.jumbotron.text-light {
   height: 40vh;
   width: 100%;
   position: relative;
@@ -17,9 +22,10 @@
   background-size: cover;
   background-repeat: no-repeat;
   z-index: 0;
+  padding: 5vw;
 }
 
-.jumbotron .jumbotron-bg {
+.jumbotron.text-light .jumbotron-bg {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -29,27 +35,27 @@
   z-index: -1;
 }
 
-.jumbotron h1 {
+.jumbotron.text-light h1 {
   font-size: 2rem;
 }
 
-.jumbotron .lead {
+.jumbotron.text-light .lead {
   font-size: 1rem;
   font-style: italic;
   color: #bbcbc0;
 }
 
-.jumbotron .container {
+.jumbotron.text-light .container {
   padding: 50px;
   color: #e6ece8;
 }
 
-.jumbotron button {
+.jumbotron.text-light button {
   border: solid 2px #bbcbc0;
   color: #cfcece;
 }
 
-.jumbotron button:hover {
+.jumbotron.text-light button:hover {
   border: solid 2px #e6ece8;
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
@@ -62,19 +68,25 @@
   font-size: 2rem;
 }
 
-.image-item {
+#plants, #about, #contact {
   padding: 3rem 1rem;
 }
 
-.image-item img {
+#plants img, #about img, #contact img {
   width: 100%;
   height: 40vh;
 }
 
-.image-item img:hover {
+#plants img:hover, #about img:hover, #contact img:hover {
   opacity: .5;
   cursor: pointer;
   -webkit-transition: .2s;
   transition: .2s;
+}
+
+.lead.text-center {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  color: #858181;
 }
 /*# sourceMappingURL=home.css.map */
