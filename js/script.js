@@ -1,8 +1,3 @@
-
-
-
-
-
 ///// Variables/////
 
 const btnShopping = document.querySelectorAll(".btn-outline-secondary");
@@ -23,7 +18,7 @@ const itemsLength = items.length;
 
 
 /// images variables
-const bigImage = document.querySelector("div.big-image > img");
+const bigImage = document.querySelector("div.big-image > img")
 const smallImages = document.querySelectorAll('.image-item');
 const previous = document.querySelector('.fa-chevron-left');
 const next = document.querySelector('.fa-chevron-right');
@@ -31,8 +26,8 @@ const productFooterItems = document.querySelectorAll('.product-footer-item');
 
 
 const succulentBox = productFooterItems[0];
+const succulentTitle = succulentBox.querySelector('.product-footer-title');
 const succulentImage = succulentBox.children[0];
-const succulentTitle = succulentBox.children[1];
 
 const cactusBox = productFooterItems[1];
 const cactusImage = cactusBox.children[0];
@@ -108,9 +103,9 @@ class Plants {
     addToShoppingCart(e) {
 
         const shoppingCart = new Object(); //create new object when click on 'add to chart' btn
-        shoppingCart.value = parseInt(productPrice.innerText);
-        shoppingCart.name = productName.innerText;
-        shoppingCart.img = `images/${productName.innerText.toLowerCase()}1.jpg`;
+        shoppingCart.value = parseInt(e.target.parentNode.children[0].children[1].innerText);
+        shoppingCart.name = e.target.parentNode.children[0].children[0].innerText;
+        shoppingCart.img = `images/${shoppingCart.name.toLowerCase()}1.jpg`;
         // download values of this object
 
 
@@ -167,10 +162,11 @@ class Plants {
 
     removeFromShoppingCart(e) {
 
-        const cancelItem = document.querySelectorAll('.cancelItem'); document.getElementById("dropdownMenuButton").classList.add('show')
+        const cancelItem = document.querySelectorAll('.cancelItem');
+        document.getElementById("dropdownMenuButton").classList.add('show')
         document.querySelector(".dropdown-menu").classList.add('show');
         cancelItem.forEach(btn => btn.addEventListener('click', plants.removeOnBtn));
-    
+
     }
 
 
@@ -215,19 +211,27 @@ class Plants {
         mainProduct.name = e.target.parentNode.children[1].innerText;
         mainProduct.price = e.target.parentNode.children[2].innerText;
 
+        plants.animationArrow()
+        let bigImage = document.querySelector("div.big-image > img")
+        let smallImages = document.querySelectorAll("body > div > div.container.product > div > div > div:nth-child(1) > div > div.row > ul");
+        let breadcrumbItemActive = document.querySelector('.breadcrumb-item.active');
+        let productName = document.querySelector('.product-title >h1');
+        let productPrice = document.querySelector('.product-price >h3');
 
         bigImage.src = `images/${(mainProduct.name).toLowerCase()}1.jpg`; // change the big image
-
-        let i = 0;
-        smallImages.forEach(img => {
-            i++;
-            img.children[0].src = `images/${(mainProduct.name).toLowerCase()}${i}.jpg`;
-        }); // change the small images
         productName.textContent = mainProduct.name; //change name of product
         productPrice.textContent = mainProduct.price; // change price of product
 
         breadcrumbItemActive.textContent = mainProduct.name; // change the breadcrumb 
 
+        // change the small images
+        smallImages.forEach(img => {
+            for (let i = 0; i < 3; i++) {
+                img.children[i].children[0].src = `images/${(mainProduct.name).toLowerCase()}${i+1}.jpg`;
+            }
+
+        });
+     
     }
     /// the same function like changeImage but on touchable devices
 
@@ -246,17 +250,19 @@ class Plants {
         });
         productName.textContent = mainProduct.name;
         productPrice.textContent = mainProduct.price;
+        plants.animationArrow()
     }
 
 
     /// Function change the other plants in footer
 
     footerImages = (e) => {
-
+        plants.animationArrow()
         plants.changeImage(e)
+        const productFooterItems = document.querySelectorAll('.product-footer-item');
 
         setTimeout(() => {
-            let nameTarget = this.name;
+            let nameTarget = e.target.parentNode.querySelector('.product-footer-title').textContent;
 
             function checkWord(namePlant) {
                 if (typeof namePlant == 'object') {
@@ -270,6 +276,7 @@ class Plants {
             let indexPlanties = planties.findIndex(checkWord);
 
             planties.splice(indexPlanties, 1);
+
 
             for (let j = 0; j < planties.length; j++) {
                 const pfi = productFooterItems[j];
@@ -289,7 +296,8 @@ class Plants {
     nextPhoto = (e) => {
 
 
-        let imageName = productName.textContent.toLowerCase();
+        let imageName = e.target.parentNode.parentNode.parentNode.parentNode.querySelector('.product-title').innerText.toLowerCase();
+        const bigImage = e.target.parentNode.parentNode.children[1].querySelector('.active');
 
         if (bigImage.src.match(`images/${imageName}1.jpg`)) {
             bigImage.src = `images/${imageName}2.jpg`;
@@ -303,7 +311,8 @@ class Plants {
     previousPhoto = (e) => {
 
 
-        let imageName = productName.textContent.toLowerCase();
+        let imageName = e.target.parentNode.parentNode.parentNode.parentNode.querySelector('.product-title').innerText.toLowerCase();
+        const bigImage = e.target.parentNode.parentNode.children[1].querySelector('.active');
 
         if (bigImage.src.match(`images/${imageName}1.jpg`)) {
             bigImage.src = `images/${imageName}3.jpg`;
@@ -314,7 +323,52 @@ class Plants {
         }
     }
 
+    animationArrow() {
 
+        TweenMax.to('.leafLight', 1.5, {
+            scale: (1.1),
+            opacity: "0.6",
+            repeat: -1,
+            yoyo: true,
+            y: -50,
+            x: -20,
+            ease: Power1.easeInOut
+        })
+        TweenMax.to('.leafDark', 1.5, {
+            scale: (1.1),
+            opacity: "0.6",
+            repeat: -1,
+            yoyo: true,
+            y: -50,
+            ease: Power1.easeInOut
+        })
+        TweenMax.to('.stalk', 1.5, {
+            opacity: "0.6",
+            y: -50,
+            repeat: -1,
+            yoyo: true,
+            ease: Power1.easeInOut
+        })
+
+
+        TweenMax.to('.fa-chevron-left', .2, {
+            scale: '1.2',
+            ease: "bounce.in",
+            y: -10,
+            repeat: 5,
+            delay: .5,
+            yoyo: true
+        })
+        TweenMax.to('.fa-chevron-right', .2, {
+            scale: '1.2',
+            ease: "bounce.in",
+            y: -10,
+            repeat: 5,
+            delay: .5,
+            yoyo: true
+        })
+
+    }
 
 }
 const plants = new Plants();
@@ -371,4 +425,7 @@ terraniumTitle.addEventListener('touchstart', terranium.footerImages);
 // exports
 
 export default Plants;
-export {breadcrumb,breadcrumbItem,breadcrumbItemActive}
+export {
+    breadcrumb,
+    breadcrumbItem
+}

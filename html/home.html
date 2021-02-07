@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
    <link rel="stylesheet" href="css/style.css">
    <link rel="stylesheet" href="css/plants.css">
+   <link rel="stylesheet" href="css/home.css">
    <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Pontano+Sans&family=Questrial&family=Quicksand&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
@@ -135,102 +136,58 @@
         </div>
       </nav>
       <!-- Nav end -->
-      <!-- Breadcrumb start -->
 
+  </div>
+      <!-- Jumbotron start -->
+
+      <div class="jumbotron text-light">
+        <div class="container">
+            <div class="jumbotron-bg"></div>
+            <h1 class="display-4">Welcome to Plant Shop</h1>
+            <p class="lead">You can find there a lot of goods</p>
+            <button type="button"class="btn btn-outline-secondary">Click here</button>
+            
+        </div>
+      </div>
+      <!-- Jumbotron end -->
+      <!-- Breadcrumb start -->
+ <div class="container col-md-12">
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item">Home</a></li>
-          <li class="breadcrumb-item">Plants</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Bonsai</li>
+          <li class="breadcrumb-item active" aria-current="page">Home</li>
         </ol>
       </nav>
 
         <!-- Breadcrumb end -->
-        <!-- Main start -->
-        <div class="container product">
-        <!-- Gallery start -->
-          <div class="row">
-            <div class="col-md-6">
-              <div class="gallery-images">
+
+        <!-- Main section start -->
+  <div class='container product'>
+            <div class='row py-5'>
+
+            <h2 class='py-5 text-center'>What are you looking for? </h2>
+
+            <div class="image-item col-md-4" id='plants'>
+             
+             <img src="./images/pexels-maddog-4150893.jpg" alt="">
+             <h5 class='title pt-4 text-center'>Plants to buy</h5>
+            </div>
+
+            
+            <div class="image-item col-md-4" id='about'>
                 
-               <div class="slider">
-                      <span class="fa fa-chevron-left"></span>
-                      <span class="fa fa-chevron-right"></span>
-                  </div>
+                <img src="./images/pexels-cottonbro-4505161.jpg" alt="">
+                <h5 class='title pt-4 text-center'>About plants</h5>
+               </div>
 
-                <div class="big-image">
-                  
-                  <img class="active" src="images/bonsai1.jpg"> 
-                  
-                </div>  
-
-                  
-
-                <div class="row">
-                <ul class="small-images">
-                  <li class="image-item col-4">
-                    <img src="images/bonsai1.jpg"></li>
-                  <li class="image-item col-4">
-                    <img src="images/bonsai2.jpg"></li>
-                  <li class="image-item col-4">
-                    <img src="images/bonsai3.jpg"></li>
-                </ul>
-                </div>
-              </div>
-            </div>
-        <!-- Gallery end -->
-        <!-- Product-description start -->
-            <div class="col-md-6">
-              <div class="product-description">
-
-                <div class="product-title">
-              <h1>Bonsai</h1>
-                </div>
-
-                <div class="product-price">
-                  <h3 class="lead">99$</h3>
-                </div>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam iure obcaecati natus voluptate non vero molestias, incidunt quo totam eos qui enim alias omnis, eaque aperiam possimus nisi inventore modi.</p>
-              </div>
-
-              <button type="button" class="btn btn-outline-secondary mx-3">
-                Add to cart
-              </button>
-            </div>
-        <!-- Product-description end -->
-          </div>
+               
+            <div class="image-item col-md-4" id= 'contact'>
+                
+                <img src="./images/pexels-chepté-cormani-1416530.jpg" alt="">
+                <h5 class='title pt-4 text-center'>Contact</h5>
+               </div>
+  
         </div>
-
-         <!-- Main end -->
-
-         <!-- Product footer start -->
-
-         <div class="container">
-           <div class="row">
-             <h2 class='py-5'>Other plants</h2>
-             <div class="product-footer-item col-md-4" id='succulent'>
-              <img src="images/succulent1.jpg" alt="">
-              <h5 class='product-footer-title pt-4'>Succulent</h5>
-              <p class='price'>19$</p>
-             </div>
-
-             <div class="product-footer-item col-md-4" id='terranium'>
-              <img src="images/terranium1.jpg" alt="">
-              <h5 class='product-footer-title pt-4'>Terranium</h5>
-              <p class='price'>59$</p>
-             </div>
-
-             <div class="product-footer-item col-md-4" id='cactus'>
-              <img src="images/cactus1.jpg" alt="">
-              <h5 class='product-footer-title pt-4'>Cactus</h5>
-              <p class='price'>29$</p>
-             </div>
-
-           </div>
-         </div>
-         <!-- Product footer end -->
-
-
+      <!-- Main section end -->
            <!-- Footer start -->
          <footer>
           <div class="container">
@@ -241,6 +198,11 @@
          </footer>
            <!-- Footer end -->
 </div>
+<script src='./js/home.js' type="module"></script>
+<!-- <script src='./js/script.js' type="module"></script>
+<script src='./js/plants.js' type="module"></script> -->
+
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
 
 <script>
@@ -248,25 +210,10 @@
     TweenMax.to('.leafDark', 1.5, { scale:(1.1), opacity:"0.6", repeat: -1, yoyo: true,y:-50, ease: Power1.easeInOut})
     TweenMax.to('.stalk', 1.5, { opacity:"0.6", y: -50, repeat: -1, yoyo: true, ease: Power1.easeInOut})
 
-    TweenMax.to('.fa-chevron-left', .2, { scale:'1.2', ease: "bounce.in", y: -10, repeat:5, delay: .5, yoyo:true })
-    TweenMax.to('.fa-chevron-right', .2, { scale:'1.2', ease: "bounce.in", y: -10, repeat:5, delay: .5, yoyo:true })
-
-    setInterval(() => {
-          TweenMax.to('.fa-chevron-left', .2, { scale:'1.2', ease: "bounce.in", y: -10, repeat:5, delay: .5, yoyo:true })
-    TweenMax.to('.fa-chevron-right', .2, { scale:'1.2', ease: "bounce.in", y: -10, repeat:5, delay: .5, yoyo:true })
-
-    }, 4000);
-
 
 </script>
-    <script src="./js/script.js" type="module" ></script>
-    <script src="./js/plants.js" type="module"></script>
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
-    -->
+
+
   </body>
 </html>
