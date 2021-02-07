@@ -11,12 +11,12 @@
 
 body {
   font-family: 'Pontano Sans', sans-serif !important;
-  padding: 30px;
 }
 
 .navbar-expand-lg {
   border-bottom: 1px solid #cfcece;
   background-color: #fff;
+  padding-top: 5vh;
 }
 
 .navbar-expand-lg .nav-link {

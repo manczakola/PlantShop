@@ -26,8 +26,8 @@ const productFooterItems = document.querySelectorAll('.product-footer-item');
 
 
 const succulentBox = productFooterItems[0];
+const succulentTitle = succulentBox.querySelector('.product-footer-title');
 const succulentImage = succulentBox.children[0];
-const succulentTitle = succulentBox.children[1];
 
 const cactusBox = productFooterItems[1];
 const cactusImage = cactusBox.children[0];
