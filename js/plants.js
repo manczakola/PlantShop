@@ -8,12 +8,13 @@ import {
 
 
 const navItems = document.querySelectorAll(".nav-item");
-const otherPlantsSection = document.querySelector("body > div > div:nth-child(4)");
+const otherPlantsSection = document.querySelector(".other-plants")
 const mainSection = document.querySelector('.container.product');
 const plants = new Plants();
 
 const changeMainSectionToProduct = (e) => {
     const productItems = document.querySelectorAll(".product-item");
+
     const succulent = productItems[0];
     const terranium = productItems[1];
     const bonsai = productItems[2];
@@ -28,7 +29,7 @@ const changeMainSectionToProduct = (e) => {
             plant.img = e.target.src;
             plant.price = e.target.parentNode.children[2].innerText;
 
-
+            const mainSection = document.querySelector('.container.product');
             mainSection.innerHTML = `
             <div class="container product">
             <!-- Gallery start -->
@@ -86,7 +87,7 @@ const changeMainSectionToProduct = (e) => {
             <li class="breadcrumb-item">Plants</li>
             <li class="breadcrumb-item active" aria-current="page">${plant.name}</li>`;
 
-            otherPlantsSection.innerHTML = `<div class="container">
+            otherPlantsSection.innerHTML = `<div class="container other-plants">
             <div class="row">
             <h2 class='py-5'>Other plants</h2>
             <div class="product-footer-item col-md-4" id='succulent'>
@@ -149,16 +150,17 @@ const changeMainSectionToProduct = (e) => {
             let planties = [bonsai, succulent, terranium, cactus]
 
 
-            const succulentBox = productFooterItems[0];
+            const succulentBox = productFooterItems[0] || document.querySelector('#succulent');
+        
             const succulentImage = succulentBox.children[0];
             const succulentTitle = succulentBox.children[1];
 
-            const cactusBox = productFooterItems[1];
+            const cactusBox = productFooterItems[1] || document.querySelector('#cactus');
             const cactusImage = cactusBox.children[0];
             const cactusTitle = cactusBox.children[1];
 
 
-            const terraniumBox = productFooterItems[2];
+            const terraniumBox = productFooterItems[2] || document.querySelector('#terranium');
             const terraniumImage = terraniumBox.children[0];
             const terraniumTitle = terraniumBox.children[1];
 
@@ -253,4 +255,7 @@ const changeMainSectionToPlants = (e) => {
 navItems[0].addEventListener('click', changeMainSectionToPlants);
 breadcrumbItem[1].addEventListener('click', changeMainSectionToPlants);
 
+navItems[0].addEventListener('touchstart', changeMainSectionToPlants);
+breadcrumbItem[1].addEventListener('touchstart', changeMainSectionToPlants);
 
+export {changeMainSectionToPlants, changeMainSectionToProduct}

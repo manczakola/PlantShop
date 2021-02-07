@@ -1,25 +1,65 @@
-import Plants from './script.js'
+import{changeMainSectionToPlants, changeMainSectionToProduct}
+ from './plants.js'
 
-const imageItems = document.querySelectorAll('.image-item');
-const imageItem = document.querySelector('.image-item');
-const plants = document.querySelector("#plants");
-const about = document.querySelector('#about');
-const contact = document.querySelector('#contact');
-const mainSection = document.querySelector('.container.product');
-const jumbotron = document.querySelector('.jumbotron.text-light');
-const otherPlantsSection = document.querySelector("body > div:nth-child(3) > div")
+const logo = document.querySelector(".navbar-brand");
+const mainSection = document.querySelector(".container.product");
+const otherPlantsSection = document.querySelector(".other-plants");
+const breadcrumb = document.querySelector(".breadcrumb");
+const buttonPlants = document.querySelector("body > div.jumbotron.text-light > div > button");
+const aboutNavItem = document.querySelector("#navbarToggler > div > ul > li:nth-child(2) > a")
 
-const breadcrumb = document.querySelector('.breadcrumb');
 
-const changeMainSectionToPlants = (e) => {
+
+const changeToHomePage = (e) => {
+
+    breadcrumb.innerHTML = `  <!-- Breadcrumb start -->
+    <div class="container col-md-12">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item active" aria-current="page">Home</li>
+        </ol>
+      </nav>
     
-    e.preventDefault();
+        <!-- Breadcrumb end -->
+    `
+    mainSection.innerHTML = `      
+    <!-- Main section start -->
+<div class='container product'>
+        <div class='row py-5'>
+
+        <h2 class='py-5 text-center'>What are you looking for? </h2>
+
+        <div class="image-item col-md-4" id='plants'>
+         
+       <img src="./images/pexels-maddog-4150893.jpg" alt=""> 
+         <h5 class='title pt-4 text-center'>Plants to buy</h5>
+        </div>
+
+        
+        <div class="image-item col-md-4" id='about'>
+            
+            <img src="./images/pexels-cottonbro-4505161.jpg" alt="">
+            <h5 class='title pt-4 text-center'>About plants</h5>
+           </div>
+
+           
+        <div class="image-item col-md-4" id= 'contact'>
+            
+            <img src="./images/pexels-chepté-cormani-1416530.jpg" alt="">
+            <h5 class='title pt-4 text-center'>Contact</h5>
+           </div>
+
+    </div>
+  <!-- Main section end -->
+`;
     
-    jumbotron.remove();
-    // if (otherPlantsSection != null) {
-        
-        
-        mainSection.innerHTML = `
+    otherPlantsSection.innerHTML = '';
+
+
+    const plants = document.querySelector("#plants");
+  plants.addEventListener('click', (e) => {
+      
+    mainSection.innerHTML = `
         <header>
         <h2>Plants</h2>
         <h4>All the plants we love...</h4>
@@ -55,199 +95,82 @@ const changeMainSectionToPlants = (e) => {
         </div>
         </div>
         `;
-        // otherPlantsSection.innerHTML = '';
-        
-        breadcrumb.innerHTML = ` <li class="breadcrumb-item">Home</li>
+
+    breadcrumb.innerHTML = ` <li class="breadcrumb-item">Home</li>
         <li class="breadcrumb-item">Plants</li>
         `;
-        
-        changeMainSectionToProduct();
-        
-    }
-    
-    
-const changeMainSectionToProduct = (e) => {
-    const productItems = document.querySelectorAll(".product-item");
-    const succulent = productItems[0];
-    const terranium = productItems[1];
-    const bonsai = productItems[2];
-    const cactus = productItems[3];
+    changeMainSectionToProduct()
+
+  });
+
+  
+const about = document.querySelector("#about");
 
 
-    productItems.forEach(prod => {
-        prod.addEventListener('click', (e) => {
+  const changeToAbout = (e) => {
+    e.preventDefault();
 
-            const plant = new Object();
-            plant.name = e.target.parentNode.children[1].innerText;
-            plant.img = e.target.src;
-            plant.price = e.target.parentNode.children[2].innerText;
+  let i = Math.floor(Math.random() * 3)+1;
 
+  breadcrumb.innerHTML = `  <!-- Breadcrumb start -->
+  <div class="container col-md-12">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">Home</li>
+        <li class="breadcrumb-item active" aria-current="page">About</li>
+      </ol>
+    </nav>
+  
+      <!-- Breadcrumb end -->
+  `
+  mainSection.innerHTML = `      
+  <!-- Main section start -->
+<div class='container product'>
+      <div class='row py-5'>
 
-            mainSection.innerHTML = `
-            <div class="container product">
-            <!-- Gallery start -->
-            <div class="row">
-            <div class="col-md-6">
-            <div class="gallery-images">
-            
-            <div class="slider">
-            <span class="fa fa-chevron-left"></span>
-            <span class="fa fa-chevron-right"></span>
-            </div>
-            
-            <div class="big-image">
-            <img class="active" src="${plant.img}"> 
-            </div>  
-            
-            
-            <div class="row">
-            <ul class="small-images">
-            <li class="image-item col-4">
-            <img src="${plant.img}"></li>
-            <li class="image-item col-4">
-            <img src="images/${(plant.name).toLowerCase()}2.jpg"></li>
-            <li class="image-item col-4">
-            <img src="images/${(plant.name).toLowerCase()}3.jpg"></li>
-            </ul>
-            </div>
-            </div>
-            </div>
-            <!-- Gallery end -->
-            <!-- Product-description start -->
-            <div class="col-md-6">
-            <div class="product-description">
-            
-            <div class="product-title">
-            <h1>${plant.name}</h1>
-            </div>
-            
-            <div class="product-price">
-            <h3 class="lead">${plant.price}</h3>
-            </div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam iure obcaecati natus voluptate non vero molestias, incidunt quo totam eos qui enim alias omnis, eaque aperiam possimus nisi inventore modi.</p>
-            </div>
-            
-            <button type="button" class="btn btn-outline-secondary mx-3">
-            Add to cart
-            </button>
-            </div>
-            <!-- Product-description end -->
-            </div>
-            </div>
-            `;
-            // change breadcrumb
-            breadcrumb.innerHTML = ` <li class="breadcrumb-item">Home</li>
-            <li class="breadcrumb-item">Plants</li>
-            <li class="breadcrumb-item active" aria-current="page">${plant.name}</li>`;
+        <h2 class='py-5 text-center'>What you should know about our plants ?</h2>
 
-            otherPlantsSection.innerHTML = `<div class="container">
-            <div class="row">
-            <h2 class='py-5'>Other plants</h2>
-            <div class="product-footer-item col-md-4" id='succulent'>
-            <img src="images/succulent1.jpg" alt="">
-            <h5 class='product-footer-title pt-4'>Succulent</h5>
-            <p class='price'>19$</p>
-            </div>
+  
+        <p class='lead text-center'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae debitis saepe vel ea, est ipsa quibusdam delectus necessitatibus facere aspernatur illum aliquam accusamus ut quis enim repellat architecto! Explicabo, placeat! </p> 
+        <p class='lead text-center'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae debitis saepe vel ea, est ipsa quibusdam delectus necessitatibus facere aspernatur illum aliquam accusamus ut quis enim repellat architecto! Explicabo, placeat! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae debitis saepe vel ea, est ipsa quibusdam delectus necessitatibus facere aspernatur illum aliquam accusamus ut quis enim repellat architecto! Explicabo, placeat!  </p> 
 
-            <div class="product-footer-item col-md-4" id='terranium'>
-            <img src="images/terranium1.jpg" alt="">
-            <h5 class='product-footer-title pt-4'>Terranium</h5>
-            <p class='price'>59$</p>
-            </div>
+      </div>
 
-            <div class="product-footer-item col-md-4" id='cactus'>
-            <img src="images/cactus1.jpg" alt="">
-            <h5 class='product-footer-title pt-4'>Cactus</h5>
-            <p class='price'>29$</p>
-            </div>
+       <div class='row py-5'>  
+       <video width="100px" autoplay>
+       <source src="images/video${i}.mp4">
+       </video>
 
-            </div>
-            </div>`;
-            // change breadcrumb
-            const newBreadcrumbItem = document.querySelectorAll('.breadcrumb-item');
-            newBreadcrumbItem[1].addEventListener('click', (e) => {
-                changeMainSectionToPlants(e);
-            });
+      </div>
 
+  </div>
+<!-- Main section end -->
+`;
+  
+  otherPlantsSection.innerHTML = '';
 
-            // add to shoppingCart
+  const homeBreadcrumb = document.querySelector("body > div:nth-child(3) > nav > ol > div > nav > ol > li:nth-child(1)")
 
-            const newBtnShopping = document.querySelectorAll('.btn-outline-secondary');
+    homeBreadcrumb.addEventListener('click', changeToHomePage);
+    homeBreadcrumb.addEventListener('touchstart', changeToHomePage);
+  }
+  buttonPlants.addEventListener('click', changeMainSectionToPlants);
+  buttonPlants.addEventListener('touchstart', changeMainSectionToPlants);
 
-            newBtnShopping.forEach((btn) =>
-                btn.addEventListener("click", plants.addToShoppingCart));
-
-
-
-            //change image on smallImages
-
-            const newSmallImages = document.querySelectorAll('.small-images');
-
-
-            newSmallImages.forEach(img => img.addEventListener('click', (e) => {
-                const srcOfClickImage = e.target.src;
-                const bigImage = img.parentNode.parentNode.children[1].children[0];
-
-                bigImage.src = srcOfClickImage;
-            }));
-
-
-            // change image on footer images
-            const productFooterItems = document.querySelectorAll('.product-footer-item');
-
-            const bonsai = new Plants('Bonsai', '99$', 'images/bonsai3.jpg', 0);
-            const succulent = new Plants('Succulent', '19$', 'images/succulent1.jpg', 1);
-            const terranium = new Plants('Terranium', '59$', 'images/terranium1.jpg', 2);
-            const cactus = new Plants('Cactus', '29$', 'images/cactus1.jpg', 3);
-
-            let planties = [bonsai, succulent, terranium, cactus]
-
-
-            const succulentBox = productFooterItems[0];
-            const succulentImage = succulentBox.children[0];
-            const succulentTitle = succulentBox.children[1];
-
-            const cactusBox = productFooterItems[1];
-            const cactusImage = cactusBox.children[0];
-            const cactusTitle = cactusBox.children[1];
-
-
-            const terraniumBox = productFooterItems[2];
-            const terraniumImage = terraniumBox.children[0];
-            const terraniumTitle = terraniumBox.children[1];
-
-            succulentImage.addEventListener('click', succulent.footerImages);
-            cactusImage.addEventListener('click', cactus.footerImages);
-            terraniumImage.addEventListener('click', terranium.footerImages);
-
-            /// On touchable devices ///
-            succulentTitle.addEventListener('touchstart', succulent.footerImages);
-            cactusTitle.addEventListener('touchstart', cactus.footerImages);
-            terraniumTitle.addEventListener('touchstart', terranium.footerImages);
-
-            // change the bigImage
-
-            const newPrevious = document.querySelector('.fa-chevron-left');
-            const newNext = document.querySelector('.fa-chevron-right');
-
-            newPrevious.addEventListener('click', (e) => {
-                plants.previousPhoto(e);;
-            });
-
-            newNext.addEventListener('click', (e) => {
-                plants.nextPhoto(e);
-            });
-
-        })
-
-    })
+  about.addEventListener('click', changeToAbout);
+  about.addEventListener('touchstart', changeToAbout);
+  aboutNavItem.addEventListener('click', changeToAbout);
+  aboutNavItem.addEventListener('touchstart', changeToAbout);
 
 }
 
 
+logo.addEventListener('click', changeToHomePage);
+logo.addEventListener('touchstart', changeToHomePage);
+buttonPlants.addEventListener('click', changeMainSectionToPlants);
+buttonPlants.addEventListener('touchstart', changeMainSectionToPlants);
 
-plants.addEventListener('click', changeMainSectionToPlants);
 
-about.addEventListener('click', console.log('click'))
-contact.addEventListener('click', console.log('click'))
-imageItem.addEventListener('click', console.log('click'))
+
+
+export {otherPlantsSection, breadcrumb, mainSection}

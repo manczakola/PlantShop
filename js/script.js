@@ -1,6 +1,6 @@
 ///// Variables/////
 
-const btnShopping = document.querySelectorAll(".btn-outline-secondary");
+const btnShopping = document.querySelectorAll("body > div:nth-child(3) > div > div.container.product > div > div:nth-child(2) > button")
 const hamburgerMenuBtn = document.querySelector("body > div > nav.navbar.navbar-expand-lg.navbar-light > div > button");
 // shopping cart variables
 const shoppingCartItems = document.querySelector(".shopping-cart-items");
@@ -26,8 +26,8 @@ const productFooterItems = document.querySelectorAll('.product-footer-item');
 
 
 const succulentBox = productFooterItems[0];
-const succulentTitle = succulentBox.querySelector('.product-footer-title');
 const succulentImage = succulentBox.children[0];
+const succulentTitle = succulentBox.children[1];
 
 const cactusBox = productFooterItems[1];
 const cactusImage = cactusBox.children[0];
