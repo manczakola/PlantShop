@@ -11,7 +11,7 @@
 
 body {
     font-family: 'Pontano Sans', sans-serif !important;
-
+    padding-top: 2vh;
 }
 
 
@@ -20,7 +20,6 @@ body {
 .navbar-expand-lg {
     border-bottom: 1px solid $lightergray;
     background-color: $white;
-    padding-top: 5vh;
 
 
     .nav-link {
@@ -218,7 +217,6 @@ body {
 
     img {
         width: 100%;
-        
 
         &:hover {
             opacity: .5;
@@ -240,7 +238,6 @@ body {
 
 @media (min-width:500px) {
     .dropdown-menu {
-        left: -10em !important;
         min-width: 300px !important;
         display: grid;
     }
@@ -250,7 +247,7 @@ body {
 @media (max-width:500px) {
     .dropdown-menu {
         min-width: 85vw !important;
-        left: -10vw !important;
+        position: relative !important;
     }
 
     #dropdownMenuButton {

@@ -1,6 +1,11 @@
 @import '_variables';
 
-.jumbotron {
+
+.container.product{
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+}
+.jumbotron.text-light {
     height: 40vh;
     width: 100%;
     position: relative;
@@ -12,6 +17,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     z-index: 0;
+    padding: 5vw;
 
 
     .jumbotron-bg {
@@ -57,9 +63,10 @@
 .title.pt-4.text-center {
     font-size: 2rem;
 }
-
-.image-item {
+#plants, #about, #contact
+ {
     padding: 3rem 1rem;
+
     img {
         width: 100%;
         height: 40vh;
@@ -70,4 +77,10 @@
             transition: .2s;
         }
     }
+}
+
+.lead.text-center{
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    color: $text;
 }
