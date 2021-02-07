@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
    <link rel="stylesheet" href="css/style.css">
    <link rel="stylesheet" href="css/plants.css">
+   <link rel="stylesheet" href="css/home.css">
+
    <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Pontano+Sans&family=Questrial&family=Quicksand&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
@@ -122,7 +124,7 @@
                         <ol class="shopping-cart-items">
                          
                         </ol>
-                        <a href="#" class="button">Checkout</a>
+                        <a href="shopping-cart.html" class="button">Checkout</a>
                       </div>
                     </div>
                     <!-- shopping-cart end     -->
@@ -133,10 +135,25 @@
             </div>
           </div>
         </div>
-      </nav>
+    </nav>
+  </div>
       <!-- Nav end -->
+
+      <!-- test start -->
+  <!-- Jumbotron start -->
+  <div class="jumbotron text-light">
+    <div class="container">
+        <div class="jumbotron-bg"></div>
+        <h1 class="display-4">Welcome to Plant Shop</h1>
+        <p class="lead">You can find there a lot of goods</p>
+        <button type="button"class="btn btn-outline-secondary">Click here</button>
+    </div>
+  </div>
+    <!-- Jumbotron end -->
+  <!-- test end  -->
       <!-- Breadcrumb start -->
 
+  <div class="container col-md-12">
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item">Home</a></li>
@@ -144,10 +161,12 @@
           <li class="breadcrumb-item active" aria-current="page">Bonsai</li>
         </ol>
       </nav>
-
         <!-- Breadcrumb end -->
+
+
         <!-- Main start -->
-        <div class="container product">
+  <div class ='main-section'>
+      <div class="container product">
         <!-- Gallery start -->
           <div class="row">
             <div class="col-md-6">
@@ -205,7 +224,7 @@
 
          <!-- Product footer start -->
 
-         <div class="container">
+         <div class="container other-plants">
            <div class="row">
              <h2 class='py-5'>Other plants</h2>
              <div class="product-footer-item col-md-4" id='succulent'>
@@ -230,17 +249,18 @@
          </div>
          <!-- Product footer end -->
 
-
-           <!-- Footer start -->
+    </div>  
+  </div>  
+    <!-- Footer start -->
          <footer>
           <div class="container">
             <div class="column-xs-12">
               <p class="copyright">&copy; Copyright 2020 <a href="https://github.com/manczakola/PlantShop" title="Aleksandra Mańczak"  target="_blank">Aleksandra Mańczak</a></p>
             </div>
           </div>
-         </footer>
+         </footer> 
            <!-- Footer end -->
-</div>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
 
 <script>
@@ -261,12 +281,12 @@
 </script>
     <script src="./js/script.js" type="module" ></script>
     <script src="./js/plants.js" type="module"></script>
+    <script src="./js/home.js" type="module"></script>
+    <script src="./js/shoppingCart.js" type="module"></script>
+  
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
-    -->
+  
   </body>
 </html>
