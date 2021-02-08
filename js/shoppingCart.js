@@ -35,12 +35,12 @@ const displayShoppingCart = () => {
       e.target.parentNode.remove();
 
       money.pop(removePrice);
-      console.log(money);
+    
 
       let total = money.reduce(function (a, b) {
         return a + b;
       });
-      
+
       document.querySelector('.big-shopping-cart-total').innerText = `Total: ${total}$`;
      })
   })

@@ -41,6 +41,28 @@ body {
   font-size: 1.3em;
 }
 
+.button-checkout {
+  width: 60%;
+  margin: 1rem 2rem;
+  border: 1px solid #cfcece;
+  border-radius: 5px;
+  background-color: transparent !important;
+}
+
+.button-checkout:hover {
+  background-color: #e6ece8 !important;
+}
+
+.button-checkout a {
+  text-decoration: none;
+  color: #858181;
+}
+
+.button-checkout a:hover {
+  background-color: #e6ece8 !important;
+  color: #525253 !important;
+}
+
 @media (max-width: 500px) {
   .navbar {
     z-index: 10;

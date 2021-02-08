@@ -6,6 +6,8 @@
    <link rel="stylesheet" href="css/style.css">
    <link rel="stylesheet" href="css/plants.css">
    <link rel="stylesheet" href="css/home.css">
+   <link rel="stylesheet" href="css/shoppingCart.css">
+   <link rel="stylesheet" href="css/account.css">
 
    <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Pontano+Sans&family=Questrial&family=Quicksand&display=swap" rel="stylesheet">
@@ -101,7 +103,7 @@
                 <a class="nav-link" href="">About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="account.html">My Account</a>
+                <a class="nav-link" href="#">My Account</a>
               </li>
               <li class="nav-item">
     
@@ -124,9 +126,7 @@
                         <ol class="shopping-cart-items">
                          
                         </ol>
-                       
-                          <button class="button-checkout btn-outline-secondary"> <a href="shopping-cart.html">Checkout</a></button>
-                        
+                        <a href="#" class="button">Checkout</a>
                       </div>
                     </div>
                     <!-- shopping-cart end     -->
@@ -141,118 +141,15 @@
   </div>
       <!-- Nav end -->
 
-      <!-- test start -->
-  <!-- Jumbotron start -->
-  <div class="jumbotron text-light">
-    <div class="container">
-        <div class="jumbotron-bg"></div>
-        <h1 class="display-4">Welcome to Plant Shop</h1>
-        <p class="lead">You can find there a lot of goods</p>
-        <button type="button"class="btn btn-outline-secondary">Click here</button>
-    </div>
-  </div>
-    <!-- Jumbotron end -->
-  <!-- test end  -->
-      <!-- Breadcrumb start -->
-
-  <div class="container col-md-12">
-      <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item">Home</a></li>
-          <li class="breadcrumb-item">Plants</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Bonsai</li>
-        </ol>
-      </nav>
-        <!-- Breadcrumb end -->
-
-
         <!-- Main start -->
   <div class ='main-section'>
-      <div class="container product">
-        <!-- Gallery start -->
-          <div class="row">
-            <div class="col-md-6">
-              <div class="gallery-images">
-                
-               <div class="slider">
-                      <span class="fa fa-chevron-left"></span>
-                      <span class="fa fa-chevron-right"></span>
-                  </div>
-
-                <div class="big-image">
-                  
-                  <img class="active" src="images/bonsai1.jpg"> 
-                  
-                </div>  
-
-                  
-
-                <div class="row">
-                <ul class="small-images">
-                  <li class="image-item col-4">
-                    <img src="images/bonsai1.jpg"></li>
-                  <li class="image-item col-4">
-                    <img src="images/bonsai2.jpg"></li>
-                  <li class="image-item col-4">
-                    <img src="images/bonsai3.jpg"></li>
-                </ul>
-                </div>
-              </div>
-            </div>
-        <!-- Gallery end -->
-        <!-- Product-description start -->
-            <div class="col-md-6">
-              <div class="product-description">
-
-                <div class="product-title">
-              <h1>Bonsai</h1>
-                </div>
-
-                <div class="product-price">
-                  <h3 class="lead">99$</h3>
-                </div>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam iure obcaecati natus voluptate non vero molestias, incidunt quo totam eos qui enim alias omnis, eaque aperiam possimus nisi inventore modi.</p>
-              </div>
-
-              <button type="button" class="btn btn-outline-secondary mx-3">
-                Add to cart
-              </button>
-            </div>
-        <!-- Product-description end -->
-          </div>
-        </div>
-
-         <!-- Main end -->
-
-         <!-- Product footer start -->
-
-         <div class="container other-plants">
-           <div class="row">
-             <h2 class='py-5'>Other plants</h2>
-             <div class="product-footer-item col-md-4" id='succulent'>
-              <img src="images/succulent1.jpg" alt="">
-              <h5 class='product-footer-title pt-4'>Succulent</h5>
-              <p class='price'>19$</p>
-             </div>
-
-             <div class="product-footer-item col-md-4" id='terranium'>
-              <img src="images/terranium1.jpg" alt="">
-              <h5 class='product-footer-title pt-4'>Terranium</h5>
-              <p class='price'>59$</p>
-             </div>
-
-             <div class="product-footer-item col-md-4" id='cactus'>
-              <img src="images/cactus1.jpg" alt="">
-              <h5 class='product-footer-title pt-4'>Cactus</h5>
-              <p class='price'>29$</p>
-             </div>
-
-           </div>
-         </div>
-         <!-- Product footer end -->
-
-    </div>  
-  </div>  
+   <form action="">
+       <h4>Sign in to Plant Shop</h4>
+       <input type="text" name="username" id="username" placeholder="Enter your username">
+       <input type="password" name="password" id="password"placeholder='Password'>
+       <button class="btn-outline-secondary" type="submit">Sign in</button>
+   </form>
+</div>
     <!-- Footer start -->
          <footer>
           <div class="container">
@@ -281,11 +178,8 @@
 
 
 </script>
-    <script src="./js/script.js" type="module" ></script>
-    <script src="./js/plants.js" type="module"></script>
-    <script src="./js/home.js" type="module"></script>
-    <!-- <script src="./js/shoppingCart.js" type="module"></script> -->
-  
+
+    
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 

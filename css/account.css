@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css?family=Pontano+Sans");
+.main-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 10vw;
+  padding-bottom: 10vw;
+}
+
+.main-section h4 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.main-section form {
+  width: 40vw;
+  padding: 5vw;
+  border: 1px solid #cfcece;
+  border-radius: 5px;
+}
+
+.main-section form input {
+  width: 30vw;
+  padding: .8rem;
+  margin: 1rem 0;
+  border-radius: 5px;
+  border: 1px solid #cfcece;
+}
+
+.main-section form button {
+  border: 1px solid;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  width: 30vw;
+  padding: 1vw;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  margin-bottom: 50px;
+  -webkit-transition: .2s ease-in;
+  transition: .2s ease-in;
+}
+/*# sourceMappingURL=account.css.map */

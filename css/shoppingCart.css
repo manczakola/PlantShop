@@ -43,15 +43,44 @@
 
 .big-shopping-cart-title {
   text-align: center;
-  padding-top: 5vh;
+  padding-top: 8vh;
   color: #858181;
 }
 
 .big-shopping-cart-total {
   font-size: 1.2rem;
-  width: 30vw;
+  font-weight: bold;
+  width: 40vw;
   margin: 0 auto;
   padding-bottom: 3rem;
   text-align: right;
+}
+
+.big-shopping-cart-button {
+  border: 1px solid;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  width: 15vw;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  margin-bottom: 50px;
+  -webkit-transition: .2s ease-in;
+  transition: .2s ease-in;
+}
+
+.big-shopping-cart-button:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+a {
+  text-decoration: none !important;
+  color: #858181;
 }
 /*# sourceMappingURL=shoppingCart.css.map */

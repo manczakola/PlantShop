@@ -45,6 +45,23 @@ body {
     }
 }
 
+.button-checkout{
+    width: 60%;
+    margin: 1rem 2rem;
+    border: 1px solid $lightergray; 
+    border-radius: 5px;
+   background-color: transparent !important;
+    &:hover{
+        background-color: $lightgray !important;
+    }
+    a{
+        text-decoration: none;
+        color:$text;
+        &:hover{
+            background-color: $lightgray !important;
+            color: $button-hover !important;
+        }
+}}
 
 @media (max-width:500px) {
     .navbar {
