@@ -37,7 +37,8 @@
 }
 
 .big-shopping-cart .big-shopping-cart-price {
-  margin-left: 15vw;
+  margin-left: 10vw;
+  margin-right: 5vw;
 }
 
 .big-shopping-cart-title {
@@ -48,7 +49,7 @@
 
 .big-shopping-cart-total {
   font-size: 1.2rem;
-  width: 35vw;
+  width: 30vw;
   margin: 0 auto;
   padding-bottom: 3rem;
   text-align: right;
