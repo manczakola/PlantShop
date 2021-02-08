@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css?family=Pontano+Sans");
+.shopping-cart {
+  padding: 10vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.shopping-cart .shopping-cart-img {
+  width: 10vw;
+  max-width: 50px;
+}
+
+.shopping-cart li {
+  padding: 1rem;
+  border-bottom: 1px solid #e6ece8;
+}
+
+.shopping-cart ol {
+  width: 100%;
+}
+
+.shopping-cart .name {
+  padding-left: 1.5rem;
+}
+
+h4 {
+  text-align: center;
+  padding-top: 5vh;
+  color: #858181;
+}
+/*# sourceMappingURL=shoppingCart.css.map */

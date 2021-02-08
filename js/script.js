@@ -1,6 +1,6 @@
 ///// Variables/////
 
-const btnShopping = document.querySelectorAll(".btn-outline-secondary");
+const btnShopping = document.querySelectorAll("body > div:nth-child(3) > div > div.container.product > div > div:nth-child(2) > button")
 const hamburgerMenuBtn = document.querySelector("body > div > nav.navbar.navbar-expand-lg.navbar-light > div > button");
 // shopping cart variables
 const shoppingCartItems = document.querySelector(".shopping-cart-items");
