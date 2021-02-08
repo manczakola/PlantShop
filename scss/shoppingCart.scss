@@ -1,28 +1,56 @@
 @import '_variables';
 
-.shopping-cart{
-padding: 10vw;
-display: flex;
-flex-direction: row;
-.shopping-cart-img{
-width:10vw;
-max-width: 50px;
-}
-li{
-    padding: 1rem;
-    border-bottom: 1px solid $lightgray;
-}
-ol{
-    width:100%;
-}
-.name{
-    padding-left: 1.5rem;
+.big-shopping-cart {
+    padding: 10vw;
+    padding-bottom: 10px;
+    width: 80vw;
+    margin: 0 auto;
+   
 
-}
+
+    .big-shopping-cart-img {
+        width: 12vw;
+        max-width: 100px;
+        height: 7vh;
+        object-fit: cover;
+        object-position: center;
+        margin: 0 1em;
+    }
+
+    li {
+        padding: 1rem;
+        border-bottom: 1px solid $lightgray;
+  
+    }
+
+    ol {
+        
+        display: grid;
+        flex-direction: column;
+
+    }
+
+    .big-shopping-cart-name {
+        padding-left: 3rem;
+        width: 20vw;
+
+    }
+    .big-shopping-cart-price{
+      
+       margin-left:15vw;
+    }
 }
 
-h4{
+.big-shopping-cart-title {
     text-align: center;
     padding-top: 5vh;
     color: $text;
+}
+
+.big-shopping-cart-total{
+    font-size: 1.2rem;
+    width: 35vw;
+    margin: 0 auto;
+ padding-bottom: 3rem;
+    text-align: right;
 }

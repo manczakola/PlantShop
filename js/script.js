@@ -19,7 +19,7 @@ const itemsLength = items.length;
 
 /// images variables
 const bigImage = document.querySelector("div.big-image > img")
-const smallImages = document.querySelectorAll('.image-item');
+const smallImages = document.querySelectorAll(".small-images");
 const previous = document.querySelector('.fa-chevron-left');
 const next = document.querySelector('.fa-chevron-right');
 const productFooterItems = document.querySelectorAll('.product-footer-item');
@@ -213,7 +213,7 @@ class Plants {
 
         plants.animationArrow()
         let bigImage = document.querySelector("div.big-image > img")
-        let smallImages = document.querySelectorAll("body > div > div.container.product > div > div > div:nth-child(1) > div > div.row > ul");
+        let smallImages = document.querySelectorAll(".small-images");
         let breadcrumbItemActive = document.querySelector('.breadcrumb-item.active');
         let productName = document.querySelector('.product-title >h1');
         let productPrice = document.querySelector('.product-price >h3');
@@ -231,7 +231,7 @@ class Plants {
             }
 
         });
-     
+
     }
     /// the same function like changeImage but on touchable devices
 

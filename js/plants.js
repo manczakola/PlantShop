@@ -132,6 +132,7 @@ const changeMainSectionToProduct = (e) => {
 
 
             newSmallImages.forEach(img => img.addEventListener('click', (e) => {
+
                 const srcOfClickImage = e.target.src;
                 const bigImage = img.parentNode.parentNode.children[1].children[0];
 
@@ -150,19 +151,19 @@ const changeMainSectionToProduct = (e) => {
             let planties = [bonsai, succulent, terranium, cactus]
 
 
-            const succulentBox = productFooterItems[0] || document.querySelector('#succulent');
-        
+            const succulentBox = productFooterItems[0];
             const succulentImage = succulentBox.children[0];
             const succulentTitle = succulentBox.children[1];
 
-            const cactusBox = productFooterItems[1] || document.querySelector('#cactus');
+            const terraniumBox = productFooterItems[1];
+            const terraniumImage = terraniumBox.children[0];
+            const terraniumTitle = terraniumBox.children[1];
+
+            const cactusBox = productFooterItems[2];
             const cactusImage = cactusBox.children[0];
             const cactusTitle = cactusBox.children[1];
 
 
-            const terraniumBox = productFooterItems[2] || document.querySelector('#terranium');
-            const terraniumImage = terraniumBox.children[0];
-            const terraniumTitle = terraniumBox.children[1];
 
             succulentImage.addEventListener('click', succulent.footerImages);
             cactusImage.addEventListener('click', cactus.footerImages);
@@ -258,4 +259,7 @@ breadcrumbItem[1].addEventListener('click', changeMainSectionToPlants);
 navItems[0].addEventListener('touchstart', changeMainSectionToPlants);
 breadcrumbItem[1].addEventListener('touchstart', changeMainSectionToPlants);
 
-export {changeMainSectionToPlants, changeMainSectionToProduct}
+export {
+    changeMainSectionToPlants,
+    changeMainSectionToProduct
+}
