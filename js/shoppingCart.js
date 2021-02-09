@@ -1,5 +1,6 @@
-const shoppingCart = document.querySelector(".big-shopping-cart")
 
+const shoppingCart = document.querySelector(".big-shopping-cart")
+const breadcrumb = document.querySelector(".breadcrumb");
 const localStorageShoppingCart = JSON.parse(localStorage.getItem('item'));
 
 let money = [];
@@ -52,3 +53,4 @@ const displayShoppingCart = () => {
 
 
 displayShoppingCart();
+

@@ -173,4 +173,4 @@ buttonPlants.addEventListener('touchstart', changeMainSectionToPlants);
 
 
 
-export {otherPlantsSection, breadcrumb, mainSection}
+export {otherPlantsSection, breadcrumb, mainSection,changeToHomePage}
