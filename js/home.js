@@ -173,4 +173,56 @@ buttonPlants.addEventListener('touchstart', changeMainSectionToPlants);
 
 
 
+document.querySelector("#navbarToggler > div > ul > li:nth-child(2) > a").addEventListener('click',
+ (e) => {
+  e.preventDefault();
+
+let i = Math.floor(Math.random() * 3)+1;
+
+breadcrumb.innerHTML = `  <!-- Breadcrumb start -->
+<div class="container col-md-12">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">Home</li>
+      <li class="breadcrumb-item active" aria-current="page">About</li>
+    </ol>
+  </nav>
+
+    <!-- Breadcrumb end -->
+`
+mainSection.innerHTML = `      
+<!-- Main section start -->
+<div class='container product'>
+    <div class='row py-5'>
+
+      <h2 class='py-5 text-center'>What you should know about our plants ?</h2>
+
+
+      <p class='lead text-center'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae debitis saepe vel ea, est ipsa quibusdam delectus necessitatibus facere aspernatur illum aliquam accusamus ut quis enim repellat architecto! Explicabo, placeat! </p> 
+      <p class='lead text-center'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae debitis saepe vel ea, est ipsa quibusdam delectus necessitatibus facere aspernatur illum aliquam accusamus ut quis enim repellat architecto! Explicabo, placeat! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae debitis saepe vel ea, est ipsa quibusdam delectus necessitatibus facere aspernatur illum aliquam accusamus ut quis enim repellat architecto! Explicabo, placeat!  </p> 
+
+    </div>
+
+     <div class='row py-5'>  
+     <video width="100px" autoplay>
+     <source src="images/video${i}.mp4">
+     </video>
+
+    </div>
+
+</div>
+<!-- Main section end -->
+`;
+
+otherPlantsSection.innerHTML = '';
+
+const homeBreadcrumb = document.querySelector("body > div:nth-child(3) > nav > ol > div > nav > ol > li:nth-child(1)")
+
+  homeBreadcrumb.addEventListener('click', changeToHomePage);
+  homeBreadcrumb.addEventListener('touchstart', changeToHomePage);
+})
+
+
+
+
 export {otherPlantsSection, breadcrumb, mainSection,changeToHomePage}

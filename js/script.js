@@ -398,7 +398,7 @@ btnShopping.forEach((btn) =>
 
 // event to change pictures on click in main section    
 smallImages.forEach(img => img.addEventListener('click', (e) => {
-    const srcOfClickImage = img.children[0].src;
+    const srcOfClickImage = e.target.src;
     bigImage.src = srcOfClickImage;
 }));
 
