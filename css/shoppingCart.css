@@ -1,9 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Pontano+Sans");
 .big-shopping-cart {
-  padding: 10vw;
-  padding-bottom: 10px;
-  width: 80vw;
-  margin: 0 auto;
+  padding: 40px 0;
 }
 
 .big-shopping-cart .big-shopping-cart-img {
@@ -15,11 +12,7 @@
   -o-object-position: center;
      object-position: center;
   margin: 0 1em;
-}
-
-.big-shopping-cart li {
-  padding: 1rem;
-  border-bottom: 1px solid #e6ece8;
+  margin-left: 0;
 }
 
 .big-shopping-cart ol {
@@ -29,16 +22,26 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  list-style: upper-latin;
 }
 
-.big-shopping-cart .big-shopping-cart-name {
-  padding-left: 3rem;
-  width: 20vw;
+.big-shopping-cart li {
+  padding: 1rem;
+  border-bottom: 1px solid #e6ece8;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 30% 30% 20% 20%;
+      grid-template-columns: 30% 30% 20% 20%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.big-shopping-cart .big-shopping-cart-price {
-  margin-left: 10vw;
-  margin-right: 5vw;
+.big-shopping-cart li .cancelItem {
+  padding: 1vw 2vw;
 }
 
 .big-shopping-cart-title {
@@ -60,7 +63,7 @@
   border: 1px solid;
   border-radius: 5px;
   font-size: 1.2rem;
-  width: 15vw;
+  width: 50%;
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -82,5 +85,11 @@
 a {
   text-decoration: none !important;
   color: #858181;
+}
+
+@media (min-width: 768px) {
+  .main-section {
+    margin-left: 25%;
+  }
 }
 /*# sourceMappingURL=shoppingCart.css.map */
