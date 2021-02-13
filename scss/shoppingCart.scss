@@ -1,11 +1,8 @@
 @import '_variables';
 
-.big-shopping-cart {
-    padding: 10vw;
-    padding-bottom: 10px;
-    width: 80vw;
-    margin: 0 auto;
 
+.big-shopping-cart {
+    padding: 40px 0;
 
 
     .big-shopping-cart-img {
@@ -15,32 +12,34 @@
         object-fit: cover;
         object-position: center;
         margin: 0 1em;
-    }
-
-    li {
-        padding: 1rem;
-        border-bottom: 1px solid $lightgray;
-
+        margin-left: 0;
     }
 
     ol {
 
         display: grid;
         flex-direction: column;
-
-    } 
-   
-    .big-shopping-cart-name {
-        padding-left: 3rem;
-        width: 20vw;
+        list-style: upper-latin;
 
     }
 
-    .big-shopping-cart-price {
 
-        margin-left: 10vw;
-        margin-right: 5vw;
+    li {
+        padding: 1rem;
+        border-bottom: 1px solid $lightgray;
+        display: grid;
+        grid-template-columns: 30% 30% 20% 20%;
+        justify-content: center;
+        align-items: center;
+
+        .cancelItem {
+            padding: 1vw 2vw;
+        }
+
     }
+
+
+
 }
 
 .big-shopping-cart-title {
@@ -63,21 +62,29 @@
     border: 1px solid;
     border-radius: 5px;
     font-size: 1.2rem;
-    width: 15vw;
+    width: 50%;
     margin: 0 auto;
     display: flex;
     justify-content: center;
     text-align: center;
     margin-bottom: 50px;
     transition: .2s ease-in;
-    &:hover{
+
+    &:hover {
         transform: scale(1.1);
     }
-    
+
 
 }
-   
-a{
+
+a {
     text-decoration: none !important;
-    color:$text;
+    color: $text;
+}
+
+
+@media (min-width:768px) {
+    .main-section {
+        margin-left: 25%;
+    }
 }
