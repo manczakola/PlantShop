@@ -1,5 +1,8 @@
-import{changeMainSectionToPlants, changeMainSectionToProduct}
- from './plants.js'
+import {
+  changeMainSectionToPlants,
+  changeMainSectionToProduct
+}
+from './plants.js'
 
 const logo = document.querySelector(".navbar-brand");
 const mainSection = document.querySelector(".container.product");
@@ -12,7 +15,7 @@ const aboutNavItem = document.querySelector("#navbarToggler > div > ul > li:nth-
 
 const changeToHomePage = (e) => {
 
-    breadcrumb.innerHTML = `  <!-- Breadcrumb start -->
+  breadcrumb.innerHTML = `  <!-- Breadcrumb start -->
     <div class="container col-md-12">
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
@@ -22,7 +25,7 @@ const changeToHomePage = (e) => {
     
         <!-- Breadcrumb end -->
     `
-    mainSection.innerHTML = `      
+  mainSection.innerHTML = `      
     <!-- Main section start -->
 <div class='container product'>
         <div class='row py-5'>
@@ -38,7 +41,7 @@ const changeToHomePage = (e) => {
         
         <div class="image-item col-md-4" id='about'>
             
-            <img src="./images/pexels-cottonbro-4505161.jpg" alt="">
+            <img src="images/aboutPhoto.jpg" alt="">
             <h5 class='title pt-4 text-center'>About plants</h5>
            </div>
 
@@ -52,13 +55,13 @@ const changeToHomePage = (e) => {
     </div>
   <!-- Main section end -->
 `;
-    
-    otherPlantsSection.innerHTML = '';
+
+  otherPlantsSection.innerHTML = '';
 
 
-    const plants = document.querySelector("#plants");
+  const plants = document.querySelector("#plants");
   plants.addEventListener('click', (e) => {
-      
+
     mainSection.innerHTML = `
         <header>
         <h2>Plants</h2>
@@ -103,16 +106,16 @@ const changeToHomePage = (e) => {
 
   });
 
-  
-const about = document.querySelector("#about");
+
+  const about = document.querySelector("#about");
 
 
   const changeToAbout = (e) => {
     e.preventDefault();
 
-  let i = Math.floor(Math.random() * 3)+1;
+    let i = Math.floor(Math.random() * 3) + 1;
 
-  breadcrumb.innerHTML = `  <!-- Breadcrumb start -->
+    breadcrumb.innerHTML = `  <!-- Breadcrumb start -->
   <div class="container col-md-12">
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
@@ -123,7 +126,7 @@ const about = document.querySelector("#about");
   
       <!-- Breadcrumb end -->
   `
-  mainSection.innerHTML = `      
+    mainSection.innerHTML = `      
   <!-- Main section start -->
 <div class='container product'>
       <div class='row py-5'>
@@ -136,20 +139,19 @@ const about = document.querySelector("#about");
 
       </div>
 
-       <div class='row py-5'>  
-       <video width="100px" autoplay>
-       <source src="images/video${i}.mp4">
-       </video>
+      <div class='row py-5 col-xs-12 aboutPhoto'>  
+      <img src='images/aboutPhoto.jpg'/>
+     </div>
 
       </div>
 
   </div>
 <!-- Main section end -->
 `;
-  
-  otherPlantsSection.innerHTML = '';
 
-  const homeBreadcrumb = document.querySelector("body > div:nth-child(3) > nav > ol > div > nav > ol > li:nth-child(1)")
+    otherPlantsSection.innerHTML = '';
+
+    const homeBreadcrumb = document.querySelector("body > div:nth-child(3) > nav > ol > div > nav > ol > li:nth-child(1)")
 
     homeBreadcrumb.addEventListener('click', changeToHomePage);
     homeBreadcrumb.addEventListener('touchstart', changeToHomePage);
@@ -174,12 +176,12 @@ buttonPlants.addEventListener('touchstart', changeMainSectionToPlants);
 
 
 document.querySelector("#navbarToggler > div > ul > li:nth-child(2) > a").addEventListener('click',
- (e) => {
-  e.preventDefault();
+  (e) => {
+    e.preventDefault();
 
-let i = Math.floor(Math.random() * 3)+1;
+    let i = Math.floor(Math.random() * 3) + 1;
 
-breadcrumb.innerHTML = `  <!-- Breadcrumb start -->
+    breadcrumb.innerHTML = `  <!-- Breadcrumb start -->
 <div class="container col-md-12">
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
@@ -190,7 +192,7 @@ breadcrumb.innerHTML = `  <!-- Breadcrumb start -->
 
     <!-- Breadcrumb end -->
 `
-mainSection.innerHTML = `      
+    mainSection.innerHTML = `      
 <!-- Main section start -->
 <div class='container product'>
     <div class='row py-5'>
@@ -203,26 +205,28 @@ mainSection.innerHTML = `
 
     </div>
 
-     <div class='row py-5'>  
-     <video width="100px" autoplay>
-     <source src="images/video${i}.mp4">
-     </video>
-
+     <div class='row py-5 col-xs-12 aboutPhoto'>  
+     <img src='images/aboutPhoto.jpg'/>
     </div>
 
 </div>
 <!-- Main section end -->
 `;
 
-otherPlantsSection.innerHTML = '';
+    otherPlantsSection.innerHTML = '';
 
-const homeBreadcrumb = document.querySelector("body > div:nth-child(3) > nav > ol > div > nav > ol > li:nth-child(1)")
+    const homeBreadcrumb = document.querySelector("body > div:nth-child(3) > nav > ol > div > nav > ol > li:nth-child(1)")
 
-  homeBreadcrumb.addEventListener('click', changeToHomePage);
-  homeBreadcrumb.addEventListener('touchstart', changeToHomePage);
-})
-
-
+    homeBreadcrumb.addEventListener('click', changeToHomePage);
+    homeBreadcrumb.addEventListener('touchstart', changeToHomePage);
+  })
 
 
-export {otherPlantsSection, breadcrumb, mainSection,changeToHomePage}
+
+
+export {
+  otherPlantsSection,
+  breadcrumb,
+  mainSection,
+  changeToHomePage
+}

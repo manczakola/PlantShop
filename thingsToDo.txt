@@ -1,0 +1,5 @@
+- change to module ( only one js in script, rest of scripts loading on the module value)
+- variables in functions
+-change home page on first page in index.thml
+-remove video and change to img
+
